@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Covid Info</string>
+    <string name="register">REGISTER</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_confirn_password_hint">Confirm Password</string>
+    <string name="signup_login_hint">Already have an account? Sign In</string>
+    <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+
+    <string-array name="guide_lines">
+        <item>Place</item>
+        <item>ABC</item>
+        <item>XYZ</item>
+    </string-array>
+
+
+    <string-array name="age">
+        <item>Age</item>
+        <item>18 to 23</item>
+        <item>23 to 28</item>
+        <item>28 to 33</item>
+        <item>33 to 38</item>
+        <item>38 to 43</item>
+
+    </string-array>
+
+    <string-array name="country">
+        <item>Country</item>
+        <item>Canada</item>
+        <item>India</item>
+
+    </string-array>
+
+
+    <string-array name="role">
+        <item>Role</item>
+        <item>User</item>
+        <item>Admin</item>
+    </string-array>
+
+    <string-array name="province">
+        <item>Province</item>
+        <item>Alberta</item>
+        <item>British Columbia</item>
+        <item>Manitoba</item>
+        <item>New Brunswick</item>
+        <item>Newfoundland and Labrador</item>
+        <item>Northwest Territories</item>
+        <item>Nova Scotia</item>
+        <item>Nunavut</item>
+        <item>Ontario</item>
+        <item>Prince Edward Island</item>
+        <item>Quebec</item>
+        <item>Saskatchewan</item>
+        <item>Yukon</item>
+
+    </string-array>
+
+
+    <string name="Open">Open navigation drawer</string>
+    <string name="Close">Close navigation drawer</string>
+
+</resources>
