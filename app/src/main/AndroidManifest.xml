@@ -18,12 +18,10 @@
         <activity android:name=".activities.NotificationsActivity" />
         <activity android:name=".activities.ForgotPasswordActivity" />
         <activity android:name=".activities.TravelGuidenceActivity" />
-        <activity android:name=".activities.CountryReportsActivity" />
         <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.AddCovidInfoActivity" />
         <activity android:name=".activities.AddNewsActivity" />
         <activity android:name=".activities.AdminDashBoardActivity" />
-        <activity android:name=".activities.DetailedNewsActivity" />
         <activity android:name=".activities.CovidLatestUpdates" />
         <activity android:name=".activities.VaccineDetailsActivity" />
         <activity android:name=".activities.QuarantineGuideLinesActivity" />
