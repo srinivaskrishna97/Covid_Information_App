@@ -18,6 +18,6 @@ public class AdminDashBoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dash_board);
 
-      
+
     }
 }
