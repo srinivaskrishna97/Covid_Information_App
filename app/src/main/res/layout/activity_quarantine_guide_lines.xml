@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.QuarantineGuideLinesActivity">
+
+    <TextView
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="25dp"
+        android:text="Quarantine GuideLines"
+        android:textSize="18dp"
+        android:fontFamily="@font/graphikmedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:id="@+id/spin_stud_emp"
+        android:singleLine="true"
+        android:background="@drawable/edittext_ronded"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="2dp"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/guide_lines"
+        android:scrollbars="none"
+        android:spinnerMode="dropdown"/>
+
+
+    <Button
+        android:id="@+id/cirLoginButton"
+        android:background="@drawable/button_design"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/loginViewsMargin"
+        android:textColor="#ffffff"
+        android:text="Show"
+        android:layout_width="180dp"
+        android:layout_height="55dp"/>
+
+    <ListView
+        android:id="@+id/list_view"
+        android:divider="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+
+</LinearLayout>
