@@ -27,7 +27,6 @@
         <activity android:name=".activities.CovidLatestUpdates" />
         <activity android:name=".activities.VaccineDetailsActivity" />
         <activity android:name=".activities.QuarantineGuideLinesActivity" />
-        <activity android:name=".activities.EditProfileActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.RegistrationActivity" />
         <activity android:name=".activities.UserDashBoardActivity" />
