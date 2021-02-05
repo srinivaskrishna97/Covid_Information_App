@@ -14,5 +14,6 @@ public class VaccineDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vaccine_details);
 
+
     }
 }

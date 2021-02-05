@@ -14,5 +14,8 @@ public class FAQsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_f_a_qs);
 
+
     }
-}
+
+   
+    }

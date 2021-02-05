@@ -82,7 +82,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
 
                 if(etMobilenumber.getText().toString().isEmpty()){
-                    Toast.makeText(RegistrationActivity.this, "Please Enter Mobile number..", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistrationActivity.this, "Please Enter MObile number..", Toast.LENGTH_SHORT).show();
                     return;
                 }
 

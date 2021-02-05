@@ -25,6 +25,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AdminLoginActivity extends AppCompatActivity {
+    Button cirLoginButton;
+    EditText editTextEmail,editTextPassword;
+    ProgressDialog  pd;
 
 
     @Override
@@ -33,6 +36,6 @@ public class AdminLoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_login);
 
 
-
+       
     }
 }

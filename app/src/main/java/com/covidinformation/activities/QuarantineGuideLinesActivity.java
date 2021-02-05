@@ -14,11 +14,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuarantineGuideLinesActivity extends AppCompatActivity {
+    ListView list_view;
+    List<SafetyGuidencePojo> guidencePojoList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quarantine_guide_lines);
 
+       
     }
 }

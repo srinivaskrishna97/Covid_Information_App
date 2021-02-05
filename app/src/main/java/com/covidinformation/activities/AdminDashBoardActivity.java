@@ -12,12 +12,15 @@ import android.view.View;
 import com.covidinformation.R;
 
 public class AdminDashBoardActivity extends AppCompatActivity {
+    CardView cdAddNews,cdAddCovidINfo,cdCouuntryReports,cdTravellGuidence,cdNotifications;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dash_board);
 
-
+        
     }
+
+
 }

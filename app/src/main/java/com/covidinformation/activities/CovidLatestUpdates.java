@@ -12,10 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CovidLatestUpdates extends AppCompatActivity {
+    List<VaccineDetailsPojo> vaccineDetailsPojo;
+    ListView list_view;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    
     }
-}

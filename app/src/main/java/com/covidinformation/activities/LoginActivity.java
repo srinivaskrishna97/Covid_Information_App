@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 }
 
-                if (spinRole.getSelectedItem().toString().equals("Admin")){
+                else if (spinRole.getSelectedItem().toString().equals("Admin")){
                     if(editTextEmail.getText().toString().isEmpty()){
                         Toast.makeText(LoginActivity.this, "Please Enter Valid Username", Toast.LENGTH_SHORT).show();
                         return;
