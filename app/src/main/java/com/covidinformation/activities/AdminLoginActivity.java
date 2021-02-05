@@ -33,6 +33,6 @@ public class AdminLoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_login);
 
 
-        
+
     }
 }
