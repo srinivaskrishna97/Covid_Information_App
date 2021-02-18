@@ -14,12 +14,19 @@ import com.bumptech.glide.Glide;
 import com.covidinformation.R;
 
 public class DetailedNewsActivity extends AppCompatActivity {
+    TextView tvCovidLatestUpdate,tvCovidDesc;
+    ImageView imageView;
+    Button btn_back;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_news);
+
+        getSupportActionBar().setTitle("Detailed News");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         
     }
