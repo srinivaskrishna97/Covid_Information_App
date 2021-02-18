@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -28,6 +29,34 @@ public class DetailedNewsActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        tvCovidLatestUpdate=(TextView)findViewById(R.id.tvCovidLatestUpdate);
+        tvCovidDesc=(TextView)findViewById(R.id.tvCovidDesc);
+        imageView=(ImageView)findViewById(R.id.imageView);
+
+        tvCovidLatestUpdate.setText(getIntent().getStringExtra("title"));
+        tvCovidDesc.setText(getIntent().getStringExtra("desc"));
+        Glide.with(DetailedNewsActivity.this).load(getIntent().getStringExtra("image")).into(imageView);
+
+        btn_back=(Button)findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //startActivity(new Intent(DetailedNewsActivity.this, GetAllNewsFragment.class));
+                finish();
+
+            }
+        });
+
         
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
