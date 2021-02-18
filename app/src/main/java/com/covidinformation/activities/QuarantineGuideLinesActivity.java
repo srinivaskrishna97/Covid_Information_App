@@ -22,6 +22,7 @@ public class QuarantineGuideLinesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quarantine_guide_lines);
 
+
        
     }
 }
