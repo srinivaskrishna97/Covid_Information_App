@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TravelGuidenceActivity extends AppCompatActivity {
+    ListView list_view;
+    List<SafetyGuidencePojo> guidencePojoList;
     
 
     @Override
@@ -21,6 +23,34 @@ public class TravelGuidenceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travel_guidence);
 
+        getSupportActionBar().setTitle("Travel Guidencs");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        list_view=(ListView)findViewById(R.id.list_view);
+        guidencePojoList=new ArrayList<>();
+        guidencePojoList.add(new SafetyGuidencePojo("The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
+                "\n The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
+                "\n The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
+                "\n The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
+                "\n The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
+                "\n The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
+                "\n The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
+                "\n Stay Safe Stay Heathly"));
+
+
+        SafetyMeasuresAdapter safetyMeasuresAdapter=new SafetyMeasuresAdapter(this,guidencePojoList);
+        list_view.setAdapter(safetyMeasuresAdapter);
+
         
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
