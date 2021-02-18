@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_login);
 
+
         getSupportActionBar().setTitle("User Login");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -86,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 }
 
-                else if (spinRole.getSelectedItem().toString().equals("Admin")){
+                if (spinRole.getSelectedItem().toString().equals("Admin")){
                     if(editTextEmail.getText().toString().isEmpty()){
                         Toast.makeText(LoginActivity.this, "Please Enter Valid Username", Toast.LENGTH_SHORT).show();
                         return;
@@ -95,6 +96,8 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Please Enter Valid Password", Toast.LENGTH_SHORT).show();
                         return;
                     }
+                    ///*/*/sdsdsdsddsdsdsdsdswwwwwwwwwwwwwww*/*/*/startActivity(new Intent(LoginActivity.this, AdminDashBoardActivity.class));
+
                     adminLoginFunction();
 
                 }
@@ -104,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-               // loginFunction();
+                // loginFunction();
                 //startActivity(new Intent(LoginActivity.this, UserDashBoardActivity.class));
 
             }
