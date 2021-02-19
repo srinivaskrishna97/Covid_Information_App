@@ -24,7 +24,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RegistrationActivity extends AppCompatActivity {
+public class
+RegistrationActivity extends AppCompatActivity {
     TextView tv_signin;
     Button btn_register;
     EditText etName,etMobilenumber,etEmail,etPassword;
@@ -35,37 +36,37 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_registration);
 
-        getSupportActionBar().setTitle("Registration");
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Registration"); //set title to the activity
+        getSupportActionBar().setHomeButtonEnabled(true); //set homebutton enable on a activity.
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //set up the UP arrow
 
+        //take values from the layout files.
         etName=(EditText)findViewById(R.id.etName);
         etMobilenumber=(EditText)findViewById(R.id.etMobilenumber);
         etEmail=(EditText)findViewById(R.id.etEmail);
         etPassword=(EditText)findViewById(R.id.etPassword);
-
-
         tv_signin=(TextView)findViewById(R.id.tv_signin);
         btn_register=(Button)findViewById(R.id.btn_register);
-
         spinAge=(Spinner)findViewById(R.id.spinAge);
         spinSelectCountry=(Spinner)findViewById(R.id.spinSelectCountry);
         spinSelectProvince=(Spinner)findViewById(R.id.spinSelectProvince);
 
+        //array for age
         ArrayAdapter adapter1 = ArrayAdapter.createFromResource(this, R.array.age, R.layout.spinner_item);
         adapter1.setDropDownViewResource(R.layout.spinner_drop_down_list);
         spinAge.setAdapter(adapter1);
 
+        //array for country
         ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this, R.array.country, R.layout.spinner_item);
         adapter2.setDropDownViewResource(R.layout.spinner_drop_down_list);
         spinSelectCountry.setAdapter(adapter2);
 
-
+        //array for province
         ArrayAdapter adapter3 = ArrayAdapter.createFromResource(this, R.array.province, R.layout.spinner_item);
         adapter3.setDropDownViewResource(R.layout.spinner_drop_down_list);
         spinSelectProvince.setAdapter(adapter3);
 
-
+        //login redirection from registration code
         tv_signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,6 +74,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
             }
         });
+
+        //for registration and validation check.
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,6 +112,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
                 else
                 {
+                    //function calling for data saving to the DB.
                    // startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
                     submitData();
 
@@ -119,6 +123,8 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     ProgressDialog progressDialog;
+
+    //transfering data to the function variable.
     private void submitData() {
         String name = etName.getText().toString();
         String email = etEmail.getText().toString();
@@ -128,14 +134,17 @@ public class RegistrationActivity extends AppCompatActivity {
         String country=spinSelectCountry.getSelectedItem().toString();
         String provience=spinSelectProvince.getSelectedItem().toString();
 
+        //message will appear while processing of data transmission.
         progressDialog = new ProgressDialog(RegistrationActivity.this);
         progressDialog.setMessage("Loading....");
         progressDialog.show();
 
+        //service call for data transferring.
         ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
         Call<ResponseData> call = service.userRegistration(name, email, mobileno,password,age,country,provience);
         call.enqueue(new Callback<ResponseData>() {
             @Override
+            //success of data transmission toast.and transfer to login activity.
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 progressDialog.dismiss();
                 if (response.body().status.equals("true")) {
@@ -148,7 +157,9 @@ public class RegistrationActivity extends AppCompatActivity {
                     Toast.makeText(RegistrationActivity.this, response.body().message, Toast.LENGTH_LONG).show();
                 }
             }
+
             @Override
+            //if fails to data transmission toast.and transfer to login activity.
             public void onFailure(Call<ResponseData> call, Throwable t) {
                 progressDialog.dismiss();
                 Toast.makeText(RegistrationActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
