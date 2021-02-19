@@ -36,82 +36,71 @@ public class AdminLoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_login);
 
 
-        getSupportActionBar().setTitle("Dashboard");
-        /*getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
+        getSupportActionBar().setTitle("Admin Login");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        cdQuarantineGuideLines=(CardView)findViewById(R.id.cdQuarantineGuideLines);
-        cdQuarantineGuideLines.setOnClickListener(new View.OnClickListener() {
+        cirLoginButton=(Button)findViewById(R.id.cirLoginButton);
+        editTextEmail=(EditText)findViewById(R.id.editTextEmail);
+        editTextPassword=(EditText)findViewById(R.id.editTextPassword);
+
+
+        cirLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AdminDashBoardActivity.this,AddQuarantineGuidelinesActivity.class));
+
+
+                if(editTextEmail.getText().toString().isEmpty()){
+                    Toast.makeText(AdminLoginActivity.this, "Please Enter Valid Username", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(editTextPassword.getText().toString().isEmpty()){
+                    Toast.makeText(AdminLoginActivity.this, "Please Enter Valid Password", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                loginFunction();
 
             }
         });
-
-        cdAddNews=(CardView)findViewById(R.id.cdAddNews);
-        cdAddNews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AdminDashBoardActivity.this,NewsInfoActivity.class));
-
-            }
-        });
-        cdAddCovidCenters=(CardView)findViewById(R.id.cdAddCovidCenters);
-        cdAddCovidCenters.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AdminDashBoardActivity.this,CovidCentersInfoActivity.class));
-
-            }
-        });
-
-        cdCouuntryReports=(CardView)findViewById(R.id.cdCouuntryReports);
-        cdCouuntryReports.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AdminDashBoardActivity.this,CountryReportsActivity.class));
-
-            }
-        });
-
-        cdTravellGuidence=(CardView)findViewById(R.id.cdTravellGuidence);
-        cdTravellGuidence.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AdminDashBoardActivity.this,AddTravellGuidelinesActivity.class));
-
-            }
-        });
-
-        cdNotifications=(CardView)findViewById(R.id.cdNotifications);
-        cdNotifications.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AdminDashBoardActivity.this,NotificationsActivity.class));
-
-            }
-        });
-
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.admin_navigation, menu);
-        return true;
-    }
+    public  void loginFunction() {
+        pd= new ProgressDialog(AdminLoginActivity.this);
+        pd.setTitle("Please wait,Data is being submit...");
+        pd.show();
+        ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
+        Call<ResponseData> call = apiService.adminlogin(editTextEmail.getText().toString(),editTextPassword.getText().toString());
 
+        call.enqueue(new Callback<ResponseData>() {
+            @Override
+            public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
+                pd.dismiss();
+                if (response.body().status.equals("true")) {
+                    SharedPreferences sharedPreferences = getSharedPreferences(Utils.SHREF, Context.MODE_PRIVATE);
+                    SharedPreferences.Editor et=sharedPreferences.edit();
+                    et.putString("user_name",editTextEmail.getText().toString());
+                    et.commit();
+                    startActivity(new Intent(AdminLoginActivity.this, AdminDashBoardActivity.class));
+                    finish();
+                } else {
+                    Toast.makeText(AdminLoginActivity.this, response.body().message, Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseData> call, Throwable t) {
+                pd.dismiss();
+                Toast.makeText(AdminLoginActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if(id == R.id.menu_logout){
-            Intent intent=new Intent(getApplicationContext(), LoginActivity.class);
-            startActivity(intent);
-            finish();
-
-
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
-
-
 }
