@@ -1,12 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cdQuarantineGuideLines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#8ACDC7"
+        app:cardCornerRadius="@dimen/_3sdp"
+        app:cardElevation="@dimen/_2sdp"
+        app:cardMaxElevation="@dimen/_3sdp">
+
+        <TextView
+            android:id="@+id/tvQuarantineGuidelines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/graphikregular"
+            android:gravity="center"
+            android:padding="@dimen/_20sdp"
+            android:text="Quarantine Guidelines "
+            android:textColor="#000"
+            android:textSize="@dimen/_15sdp" />
+
+    </androidx.cardview.widget.CardView>
 
 
     <androidx.cardview.widget.CardView
+        android:visibility="gone"
         android:id="@+id/cdCouuntryReports"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,8 +45,8 @@
             android:id="@+id/tvCouuntryReports"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:fontFamily="@font/graphikregular"
+            android:gravity="center"
             android:padding="@dimen/_20sdp"
             android:text="Country Reports"
             android:textColor="#000"
@@ -32,9 +57,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cdTravellGuidence"
-        android:layout_below="@+id/cdCouuntryReports"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/cdCouuntryReports"
         android:layout_margin="10dp"
         app:cardBackgroundColor="#8ACDC7"
         app:cardCornerRadius="@dimen/_3sdp"
@@ -45,8 +70,8 @@
             android:id="@+id/tvTravellGuidence"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:fontFamily="@font/graphikregular"
+            android:gravity="center"
             android:padding="@dimen/_20sdp"
             android:text="Travel Guidence"
             android:textColor="#000"
@@ -57,9 +82,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cdAddNews"
-        android:layout_below="@+id/cdTravellGuidence"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/cdTravellGuidence"
         android:layout_margin="10dp"
         app:cardBackgroundColor="#8ACDC7"
         app:cardCornerRadius="@dimen/_3sdp"
@@ -70,8 +95,8 @@
             android:id="@+id/tvAddNews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:fontFamily="@font/graphikregular"
+            android:gravity="center"
             android:padding="@dimen/_20sdp"
             android:text="News Feed"
             android:textColor="#000"
@@ -81,7 +106,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cdAddCovidINfo"
+        android:id="@+id/cdAddCovidCenters"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cdAddNews"
@@ -96,10 +121,10 @@
             android:id="@+id/tvAddCovidInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/graphikregular"
             android:gravity="center"
             android:padding="@dimen/_20sdp"
-            android:fontFamily="@font/graphikregular"
-            android:text="Covid Info"
+            android:text="Covid Centers"
             android:textColor="#000"
             android:textSize="@dimen/_15sdp" />
 
@@ -108,6 +133,7 @@
 
 
     <androidx.cardview.widget.CardView
+        android:visibility="gone"
         android:id="@+id/cdNotifications"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -123,9 +149,9 @@
             android:id="@+id/tvNotifications"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/graphikregular"
             android:gravity="center"
             android:padding="@dimen/_20sdp"
-            android:fontFamily="@font/graphikregular"
             android:text="Notifications"
             android:textColor="#000"
             android:textSize="@dimen/_15sdp" />
@@ -133,4 +159,4 @@
 
     </androidx.cardview.widget.CardView>
 
-</RelativeLayout>
+</LinearLayout>
