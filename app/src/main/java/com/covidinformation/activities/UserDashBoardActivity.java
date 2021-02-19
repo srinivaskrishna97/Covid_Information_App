@@ -22,6 +22,7 @@ import com.covidinformation.R;
 import com.covidinformation.fragments.CovidCentersFragmnet;
 import com.covidinformation.fragments.GetAllNewsFragment;
 import com.covidinformation.fragments.HomeScreenFragment;
+import com.covidinformation.fragments.MapFragment;
 import com.covidinformation.fragments.MyProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -63,7 +64,8 @@ public class UserDashBoardActivity extends AppCompatActivity {
                                 selectedFragment = HomeScreenFragment.homeScreenFragment();
                                 break;
                             case R.id.map:
-                                selectedFragment = HomeScreenFragment.homeScreenFragment();
+                                Intent myIntent = new Intent(UserDashBoardActivity.this, MapActivity.class);
+                                startActivity(myIntent);
                                 break;
                             case R.id.myprofile:
                                 selectedFragment = MyProfileFragment.myProfileFragment();
