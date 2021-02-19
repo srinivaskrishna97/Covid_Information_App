@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -7,42 +7,39 @@
     android:layout_height="match_parent"
     tools:context=".activities.QuarantineGuideLinesActivity">
 
-    <TextView
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="25dp"
-        android:text="Quarantine GuideLines"
-        android:textSize="18dp"
-        android:fontFamily="@font/graphikmedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
     <Spinner
-        android:id="@+id/spin_stud_emp"
-        android:singleLine="true"
-        android:background="@drawable/edittext_ronded"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="2dp"
-        android:padding="16dp"
+        android:id="@+id/spinProveience"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/guide_lines"
-        android:scrollbars="none"
-        android:spinnerMode="dropdown"/>
-
+        android:layout_marginLeft="@dimen/_40ssp"
+        android:layout_marginTop="@dimen/_15ssp"
+        android:layout_marginRight="@dimen/_40ssp"
+        android:layout_weight="1"
+        android:background="@drawable/spinner_border_black"
+        android:entries="@array/province"
+        android:paddingBottom="10dp" />
 
     <Button
-        android:id="@+id/cirLoginButton"
-        android:background="@drawable/button_design"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/loginViewsMargin"
+        android:id="@+id/btnSubmit"
+        android:layout_gravity="center"
         android:textColor="#ffffff"
-        android:text="Show"
-        android:layout_width="180dp"
-        android:layout_height="55dp"/>
+        android:text="Submit"
+        android:layout_alignParentRight="true"
+        android:padding="@dimen/_6ssp"
+        android:layout_below="@+id/spinProveience"
+        android:layout_marginTop="@dimen/_15ssp"
+        android:layout_marginRight="@dimen/_35ssp"
+        android:layout_marginBottom="@dimen/_4ssp"
+        android:drawablePadding="@dimen/_6ssp"
+        android:background="@drawable/btn_design_2"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_28ssp"/>
+
+
 
     <ListView
+        android:layout_below="@+id/btnSubmit"
+        android:layout_marginTop="@dimen/_15ssp"
         android:id="@+id/list_view"
         android:divider="@null"
         android:layout_width="match_parent"
@@ -50,4 +47,4 @@
     </ListView>
 
 
-</LinearLayout>
+</RelativeLayout>
