@@ -1,6 +1,7 @@
 package com.covidinformation.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,7 +48,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Enter your Email", Toast.LENGTH_LONG).show();
                     return;
                 }
-                //submitdata();
+                submitdata();
             }
         });
 
@@ -62,7 +63,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 if (response.body().message.equals("true")) {
                     Toast.makeText(ForgotPasswordActivity.this, response.body().message, Toast.LENGTH_LONG).show();
-                    Log.i("msg", "" + response.body().message);
+                    startActivity(new Intent(ForgotPasswordActivity.this,LoginActivity.class));
                     finish();
                 } else {
                     Toast.makeText(ForgotPasswordActivity.this, response.body().message, Toast.LENGTH_LONG).show();
