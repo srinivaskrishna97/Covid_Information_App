@@ -1,12 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ListView
-        android:id="@+id/list_view"
-        android:divider="@null"
+
+
+    <com.denzcoskun.imageslider.ImageSlider
+        android:layout_width="match_parent"
+        app:auto_cycle="true"
+        app:delay="0"
+        android:id="@+id/slider"
+        app:period="2000"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
+
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/image1"
+        android:src="@drawable/safety_1"
+        android:scaleType="fitXY"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
-    </ListView>
+    </ImageView>
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/image2"
+        android:src="@drawable/safety_2"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ImageView>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_weight="1"
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:textColor="@color/buttons"
+            app:backgroundTint="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_weight="1"
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textColor="@color/buttons"
+            app:backgroundTint="@color/white"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+-->
