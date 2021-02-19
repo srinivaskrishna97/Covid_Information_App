@@ -31,4 +31,3 @@ public class FAQsActivity extends AppCompatActivity {
         }
     }
 }
-

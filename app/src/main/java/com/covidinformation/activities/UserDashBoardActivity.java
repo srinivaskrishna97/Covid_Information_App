@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.ActionBar;
@@ -18,18 +19,17 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.covidinformation.R;
+import com.covidinformation.fragments.CovidCentersFragmnet;
+import com.covidinformation.fragments.GetAllNewsFragment;
+import com.covidinformation.fragments.HomeScreenFragment;
+import com.covidinformation.fragments.MyProfileFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
 
 public class UserDashBoardActivity extends AppCompatActivity {
-    TextView tvTotalCases, tvRecovered, tvDeaths, tvActive;
-    PieChart pieChart;
-    private ActionBarDrawerToggle t;
-    private NavigationView navigation_view;
-    private DrawerLayout layout_drawer;
-    CardView cdSafetyMeasures,cdfaqs,cdTravellGuidence,cdQuarentineGuidelines;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class UserDashBoardActivity extends AppCompatActivity {
                                 selectedFragment = GetAllNewsFragment.getAllNewsFragment();
                                 break;
                             case R.id.item2:
-                                selectedFragment = HomeScreenFragment.homeScreenFragment();
+                                selectedFragment = CovidCentersFragmnet.covidCentersFragmnet();
                                 break;
                             case R.id.home:
                                 selectedFragment = HomeScreenFragment.homeScreenFragment();

@@ -4,17 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.ListView;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.covidinformation.R;
-import com.covidinformation.adapters.SafetyMeasuresAdapter;
-import com.covidinformation.models.SafetyGuidencePojo;
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SafetyMeasuresActivity extends AppCompatActivity {
-   
+    Button btnBack,btnNext;
+    ImageView image1,image2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

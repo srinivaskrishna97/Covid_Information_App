@@ -13,11 +13,13 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.covidinformation.R;
+import com.covidinformation.fragments.GetAllNewsFragment;
 
 public class DetailedNewsActivity extends AppCompatActivity {
     TextView tvCovidLatestUpdate,tvCovidDesc;
     ImageView imageView;
     Button btn_back;
+
 
 
     @Override
@@ -46,9 +48,8 @@ public class DetailedNewsActivity extends AppCompatActivity {
 
             }
         });
-
-        
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

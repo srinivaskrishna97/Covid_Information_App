@@ -12,7 +12,7 @@ import android.view.View;
 import com.covidinformation.R;
 
 public class AdminDashBoardActivity extends AppCompatActivity {
-    CardView cdAddNews,cdAddCovidINfo,cdCouuntryReports,cdTravellGuidence,cdNotifications;
+    CardView cdAddNews,cdAddCovidCenters,cdCouuntryReports,cdTravellGuidence,cdNotifications,cdQuarantineGuideLines;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +20,8 @@ public class AdminDashBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_dash_board);
 
         getSupportActionBar().setTitle("Dashboard");
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        /*getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
 
         cdQuarantineGuideLines=(CardView)findViewById(R.id.cdQuarantineGuideLines);
         cdQuarantineGuideLines.setOnClickListener(new View.OnClickListener() {
@@ -36,16 +36,15 @@ public class AdminDashBoardActivity extends AppCompatActivity {
         cdAddNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AdminDashBoardActivity.this,AddNewsActivity.class));
+                startActivity(new Intent(AdminDashBoardActivity.this,NewsInfoActivity.class));
 
             }
         });
-        cdAddCovidINfo=(CardView)findViewById(R.id.cdAddCovidINfo);
-
-        cdAddCovidINfo.setOnClickListener(new View.OnClickListener() {
+        cdAddCovidCenters=(CardView)findViewById(R.id.cdAddCovidCenters);
+        cdAddCovidCenters.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AdminDashBoardActivity.this,AddCovidInfoActivity.class));
+                startActivity(new Intent(AdminDashBoardActivity.this,CovidCentersInfoActivity.class));
 
             }
         });

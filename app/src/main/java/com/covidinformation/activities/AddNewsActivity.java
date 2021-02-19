@@ -31,12 +31,12 @@ import java.util.Map;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
+import pub.devrel.easypermissions.EasyPermissions;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
 
 public class AddNewsActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
     ProgressDialog pd;

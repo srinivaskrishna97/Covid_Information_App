@@ -27,6 +27,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 public class QuarantineGuideLinesActivity extends AppCompatActivity {
     ListView list_view;
     List<QGuideLinesPojo> guidencePojoList;
@@ -53,7 +54,7 @@ public class QuarantineGuideLinesActivity extends AppCompatActivity {
         list_view=(ListView)findViewById(R.id.list_view);
         guidencePojoList=new ArrayList<>();
 
-
+        
     }
     ProgressDialog progressDialog;
     public void GetQuerentineGuidence(String province) {
