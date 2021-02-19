@@ -15,6 +15,7 @@ public class FAQsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_f_a_qs);
 
 
+
     }
 
    
