@@ -2,21 +2,35 @@ package com.covidinformation.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.covidinformation.R;
 import com.covidinformation.adapters.SafetyMeasuresAdapter;
+import com.covidinformation.api.ApiService;
+import com.covidinformation.api.RetroClient;
 import com.covidinformation.models.SafetyGuidencePojo;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class TravelGuidenceActivity extends AppCompatActivity {
     ListView list_view;
-    List<SafetyGuidencePojo> guidencePojoList;
-    
+    List<QGuideLinesPojo> guidencePojoList;
+    Spinner spinProveience;
+    Button btnSubmit;
+    Spinner spinFrom, spinTo;
+    TravelGuidenceAdapter travelGuidenceAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,24 +40,70 @@ public class TravelGuidenceActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Travel Guidencs");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        spinProveience = (Spinner) findViewById(R.id.spinProveience);
 
-        list_view=(ListView)findViewById(R.id.list_view);
-        guidencePojoList=new ArrayList<>();
-        guidencePojoList.add(new SafetyGuidencePojo("The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
-                "\n The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
-                "\n The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
-                "\n The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
-                "\n The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
-                "\n The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
-                "\n The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. \n" +
-                "\n Stay Safe Stay Heathly"));
+        btnSubmit = (Button) findViewById(R.id.btnSubmit);
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GetTravelGuidence(spinProveience.getSelectedItem().toString());
+            }
+        });
+
+       /* spinFrom=(Spinner)findViewById(R.id.spinFrom);
+        spinTo=(Spinner)findViewById(R.id.spinTo);
+        spinTo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                String text = spinFrom.getSelectedItem().toString().toLowerCase(Locale.getDefault());
+                travelGuidenceAdapter.guidenceFilter(text);
+            } // to close the onItemSelected
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+
+            }
+        });*/
+
+        list_view = (ListView) findViewById(R.id.list_view);
+        guidencePojoList = new ArrayList<>();
 
 
-        SafetyMeasuresAdapter safetyMeasuresAdapter=new SafetyMeasuresAdapter(this,guidencePojoList);
-        list_view.setAdapter(safetyMeasuresAdapter);
-
-        
     }
+
+    ProgressDialog progressDialog;
+
+    public void GetTravelGuidence(String province) {
+        progressDialog = new ProgressDialog(TravelGuidenceActivity.this);
+        progressDialog.setMessage("Loading....");
+        progressDialog.show();
+        ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
+        Call<List<QGuideLinesPojo>> call = service.searchtravel(province);
+        call.enqueue(new Callback<List<QGuideLinesPojo>>() {
+            @Override
+            public void onResponse(Call<List<QGuideLinesPojo>> call, Response<List<QGuideLinesPojo>> response) {
+                progressDialog.dismiss();
+                if (response.body() == null) {
+                    Toast.makeText(TravelGuidenceActivity.this, "No data found", Toast.LENGTH_SHORT).show();
+                }
+                if (response.body().size() == 0) {
+                    Toast.makeText(TravelGuidenceActivity.this, "No data found", Toast.LENGTH_SHORT).show();
+                } else {
+                    guidencePojoList = response.body();
+                    list_view.setAdapter(new TravelGuidelinesAdapter(TravelGuidenceActivity.this, guidencePojoList));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<QGuideLinesPojo>> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(TravelGuidenceActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -54,3 +114,5 @@ public class TravelGuidenceActivity extends AppCompatActivity {
         }
     }
 }
+    
+
