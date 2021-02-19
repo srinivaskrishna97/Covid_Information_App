@@ -1,7 +1,12 @@
 package com.covidinformation.api;
 
 import com.covidinformation.models.EditProfilePojo;
+import com.covidinformation.models.GetAllNewsPojo;
+import com.covidinformation.models.GetCovidCentersPojo;
+import com.covidinformation.models.GetQGPojo;
+import com.covidinformation.models.QGuideLinesPojo;
 import com.covidinformation.models.ResponseData;
+import com.covidinformation.models.SafetyGuidencePojo;
 
 import java.util.List;
 import java.util.Map;
@@ -50,11 +55,87 @@ public interface ApiService {
             @Query("phone") String phone,
             @Query("password") String password);
 
-    @GET("rideshare/forgotPassword.php")
+    @GET("covid/forgotpassword.php")
     Call<ResponseData> forgotPassword
-            (@Query("emailid") String emailid);
+            (@Query("email") String email);
+
+    @Multipart
+    @POST("covid/addnews.php")
+    Call<ResponseData> addnews(
+            @Part MultipartBody.Part file,
+            @PartMap Map<String, String> partMap
+    );
 
 
+    @GET("covid/getnews.php")
+    Call<List<GetAllNewsPojo>> getAllNews();
+
+
+    @GET("covid/searchquarantine.php")
+    Call<List<QGuideLinesPojo>> searchquarantine(@Query("province") String province);
+
+
+    @GET("covid/searchtravel.php")
+    Call<List<QGuideLinesPojo>> searchtravel(@Query("province") String province);
+
+
+    @GET("covid/getquarantine.php")
+    Call<List<GetQGPojo>> getquarantine();
+
+    @GET("/covid/addquarantine.php?")
+    Call<ResponseData> addquarantine(
+            @Query("province") String email,
+            @Query("country") String password,
+            @Query("description") String description
+    );
+
+
+
+    @GET("/covid/addcenters.php?")
+    Call<ResponseData> addcenters(
+            @Query("name") String name,
+            @Query("location") String location,
+            @Query("address1") String address1,
+            @Query("address2") String address2,
+            @Query("phone") String phone,
+            @Query("lat") String lat,
+            @Query("lg") String lg
+    );
+
+
+    @GET("/covid/addtravel.php?")
+    Call<ResponseData> addtravel(
+            @Query("province") String email,
+            @Query("country") String password,
+            @Query("description") String description
+    );
+
+    @GET("covid/gettravel.php")
+    Call<List<GetQGPojo>> gettravel();
+
+
+    @GET("covid/getcovidcenters.php")
+    Call<List<GetCovidCentersPojo>> getcovidcenters();
+
+
+    @GET("covid/safetyguidence.php")
+    Call<List<SafetyGuidencePojo>> safetyguidence();
+
+    @GET("/covid/deletecenter.php")
+    Call<ResponseData> deletecenter(@Query("id") String id);
+
+
+
+    @GET("/covid/deletequarantine.php")
+    Call<ResponseData> deletequarantine(@Query("id") String id);
+
+
+    @GET("/covid/deletenews.php")
+    Call<ResponseData> deletenews(@Query("id") String id);
+
+
+    @GET("/covid/deletetravel.php")
+    Call<ResponseData> deletetravel(@Query("id") String id);
 
 
 

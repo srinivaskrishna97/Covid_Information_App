@@ -3,6 +3,9 @@
     package="com.covidinformation">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,19 +15,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.MapActivity"></activity>
+        <activity android:name=".activities.NewsInfoActivity"></activity>
+        <activity android:name=".activities.CovidCentersInfoActivity" />
+        <activity android:name=".activities.AddQuarantineGuidelinesActivity" />
+        <activity android:name=".activities.AddTravellGuidelinesActivity" />
+        <activity android:name=".activities.MapActivity" />
         <activity android:name=".activities.FAQsActivity" />
         <activity android:name=".activities.SafetyMeasuresActivity" />
         <activity android:name=".activities.NotificationsActivity" />
         <activity android:name=".activities.ForgotPasswordActivity" />
         <activity android:name=".activities.TravelGuidenceActivity" />
+        <activity android:name=".activities.CountryReportsActivity" />
         <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.AddCovidInfoActivity" />
         <activity android:name=".activities.AddNewsActivity" />
         <activity android:name=".activities.AdminDashBoardActivity" />
-        <activity android:name=".activities.CovidLatestUpdates" />
+        <activity android:name=".activities.DetailedNewsActivity" />
         <activity android:name=".activities.VaccineDetailsActivity" />
         <activity android:name=".activities.QuarantineGuideLinesActivity" />
+        <activity android:name=".activities.EditProfileActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.RegistrationActivity" />
         <activity android:name=".activities.UserDashBoardActivity" />

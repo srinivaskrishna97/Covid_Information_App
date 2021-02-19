@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/myprofile"
-        android:title="My Profile"/>
+
+
+    <item android:id="@+id/item1"
+        android:icon="@drawable/ic_baseline_ac_unit_24"
+        android:title="News"/>
+
+    <item android:id="@+id/item2"
+        android:icon="@drawable/ic_baseline_settings_input_antenna_24"
+        android:title="Centers"/>
+
+    <item android:id="@+id/home"
+        android:icon="@drawable/ic_baseline_home_24"
+
+        android:title="Home"/>
+
 
     <item android:id="@+id/map"
-        android:title="Map"/>
+        android:icon="@drawable/ic_baseline_analytics_24"
 
-    <item android:id="@+id/logout"
-        android:title="Logout"/>
+        android:title="statics"/>
+
+
+
+
+    <item android:id="@+id/myprofile"
+        android:icon="@drawable/ic_baseline_person_pin_24"
+
+        android:title="My Profile"/>
 
 </menu>

@@ -9,14 +9,12 @@ import android.webkit.WebViewClient;
 import com.covidinformation.R;
 
 public class MapActivity extends AppCompatActivity {
-
     private WebView webview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-
         webview = (WebView)findViewById(R.id.articleWebView);
         String url="https://www.healthmap.org/covid-19/";
         webview.getSettings().setJavaScriptEnabled(true);
