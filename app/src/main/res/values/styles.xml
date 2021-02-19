@@ -50,6 +50,12 @@
         <item name="android:backgroundTint">#FFFFFF</item>
     </style>
 
+
+    <style name="modifiedEditText1" parent="parent">
+        <item name="android:textSize">@dimen/newsMoreTextSize</item>
+        <item name="android:backgroundTint">#000</item>
+    </style>
+
     <style name="viewParent">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

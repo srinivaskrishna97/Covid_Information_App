@@ -14,6 +14,10 @@ public class CountryReportsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country_reports);
 
+        getSupportActionBar().setTitle("Country Reports");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
        
     }
 }
