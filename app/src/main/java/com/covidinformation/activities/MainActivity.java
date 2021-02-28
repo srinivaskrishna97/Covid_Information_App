@@ -12,7 +12,7 @@ import android.widget.Button;
 import com.covidinformation.R;
 
 public class MainActivity extends AppCompatActivity {
-
+//Logout screen
 
     Button btnLogin,btnRegister;
     @Override
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        //Hides the Action bar
         getSupportActionBar().hide();
 
         btnLogin=(Button)findViewById(R.id.btnLogin);

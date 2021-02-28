@@ -10,16 +10,17 @@ import android.view.WindowManager;
 import com.covidinformation.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
-
+//Splash Screeen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
+        //Hides the action bar
         getSupportActionBar().hide();
 
-
+         //Display time
         final int ScreenDisplay = 1500;
         Thread t1=new Thread(){
             int wait1=0;

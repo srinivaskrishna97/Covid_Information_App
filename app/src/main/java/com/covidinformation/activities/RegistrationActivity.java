@@ -162,6 +162,7 @@ RegistrationActivity extends AppCompatActivity {
             //if fails to data transmission toast.and transfer to login activity.
             public void onFailure(Call<ResponseData> call, Throwable t) {
                 progressDialog.dismiss();
+                //falure message
                 Toast.makeText(RegistrationActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });

@@ -27,6 +27,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
+    //LoginScreen
+
     TextView tv_signup,tvForgetPassword;
     Button cirLoginButton;
     ProgressDialog pd;
@@ -49,8 +51,10 @@ public class LoginActivity extends AppCompatActivity {
         tvForgetPassword=(TextView)findViewById(R.id.tvForgetPassword);
         cirLoginButton=(Button)findViewById(R.id.cirLoginButton);
         spinRole=(Spinner)findViewById(R.id.spinRole);
+        //Adapter linking for User type
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.role, R.layout.spinner_item);
         adapter.setDropDownViewResource(R.layout.spinner_drop_down_list);
+
         spinRole.setAdapter(adapter);
 
         tvForgetPassword.setOnClickListener(new View.OnClickListener() {
@@ -113,10 +117,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    //admin side
     public  void loginFunction() {
         pd= new ProgressDialog(LoginActivity.this);
         pd.setTitle("Please wait,Data is being submit...");
         pd.show();
+        //Instance of the retrofit
         ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
         Call<ResponseData> call = apiService.userLogin(editTextEmail.getText().toString(),editTextPassword.getText().toString());
 
@@ -143,11 +150,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
+    //admin side
     public  void adminLoginFunction() {
         pd= new ProgressDialog(LoginActivity.this);
         pd.setTitle("Please wait,Data is being submit...");
         pd.show();
+        //Instance of the retrofit
         ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
         Call<ResponseData> call = apiService.adminlogin(editTextEmail.getText().toString(),editTextPassword.getText().toString());
 
