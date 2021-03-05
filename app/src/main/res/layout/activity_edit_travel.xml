@@ -58,6 +58,69 @@
             android:paddingBottom="10dp" />
 
     </LinearLayout>
+    <EditText
+        android:id="@+id/etDescription"
+        style="@style/modifiedEditText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:hint="Description"
+        android:paddingBottom="10dp"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        android:textSize="@dimen/_14sdp" />
+
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_below="@+id/etDescription"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="#4A2A6F"
+        android:gravity="center"
+        android:text="Update"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_12sdp" />
+    <EditText
+        android:id="@+id/etDescription"
+        style="@style/modifiedEditText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:hint="Description"
+        android:paddingBottom="10dp"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        android:textSize="@dimen/_14sdp" />
+
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_below="@+id/etDescription"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="#4A2A6F"
+        android:gravity="center"
+        android:text="Update"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_12sdp" />
+
 
 
 
