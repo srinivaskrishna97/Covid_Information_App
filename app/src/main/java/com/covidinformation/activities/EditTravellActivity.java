@@ -66,3 +66,43 @@ public class EditTravellActivity extends AppCompatActivity {
             }
         });
     }
+    public  void updateTravell() {
+        pd= new ProgressDialog(EditTravellActivity.this);
+        pd.setTitle("Please wait,Data is being submit...");
+        pd.show();
+        ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
+        Call<ResponseData> call = apiService.edittravel(spinSelectProvince.getSelectedItem().toString(),
+                spinSelectCountry.getSelectedItem().toString(),etDescription.getText().toString(),getIntent().getStringExtra("tid"));
+
+        call.enqueue(new Callback<ResponseData>() {
+            @Override
+            public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
+                pd.dismiss();
+                if (response.body().status.equals("true")) {
+                    startActivity(new Intent(EditTravellActivity.this, AddTravellGuidelinesActivity.class));
+                    finish();
+                } else {
+                    Toast.makeText(EditTravellActivity.this, response.body().message, Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseData> call, Throwable t) {
+                pd.dismiss();
+                Toast.makeText(EditTravellActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+}
