@@ -14,8 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.covidinformation.R;
 import com.covidinformation.Utils;
 import com.covidinformation.activities.EditProfileActivity;
@@ -33,11 +36,14 @@ import retrofit2.Response;
 
 public class MyProfileFragment extends Fragment {
     EditText etName,etMobilenumber,etEmail,etPassword;
+    TextView tvnm,tvcon;
     Button btn_updateProfile;
     SharedPreferences sharedPreferences;
     ProgressDialog progressDialog;
     List<EditProfilePojo> a1;
     ResponseData a2;
+    ImageView imageView;
+    String URL="http://covidinformation.live/covid/";
     View view;
 
     public static MyProfileFragment myProfileFragment() {
@@ -58,6 +64,10 @@ public class MyProfileFragment extends Fragment {
         etMobilenumber=(EditText)view.findViewById(R.id.etMobilenumber);
         etEmail=(EditText)view.findViewById(R.id.etEmail);
         etPassword=(EditText)view.findViewById(R.id.etPassword);
+        tvnm=(TextView)view.findViewById(R.id.tvnm);
+        tvcon=(TextView)view.findViewById(R.id.tvcon);
+        imageView=(ImageView)view.findViewById(R.id.imageView);
+
 
         getMyProfile();
         btn_updateProfile=(Button)view.findViewById(R.id.btn_updateProfile);
@@ -73,7 +83,7 @@ public class MyProfileFragment extends Fragment {
 
     public void getMyProfile(){
         sharedPreferences = getActivity().getSharedPreferences(Utils.SHREF, Context.MODE_PRIVATE);
-        String session = sharedPreferences.getString("user_name", "def-val");
+        String session = sharedPreferences.getString("uname", "def-val");
         progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("Loading....");
         progressDialog.show();
@@ -90,6 +100,17 @@ public class MyProfileFragment extends Fragment {
                 etMobilenumber.setText(user1.getPhone());
                 etEmail.setText(user1.getEmail());
                 etPassword.setText(user1.getPassword());
+                tvnm.setText(user1.getName());
+                tvcon.setText(user1.getProvince()+","+user1.getCountry());
+                if(user1.getImage() == null || user1.getImage() ==""){
+                    Glide.with(getContext()).load(R.drawable.profile).into(imageView);
+                }else {
+                    Glide.with(getContext()).load(URL+user1.getImage()).into(imageView);
+
+                }
+
+
+
             }
 
             @Override
