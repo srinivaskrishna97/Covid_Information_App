@@ -40,14 +40,12 @@ public class AddQuarantineGuidelinesActivity extends AppCompatActivity {
     ListView list_view;
     List<GetQGPojo> getQGPojo;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_quarantine_guidelines);
 
-        getSupportActionBar().setTitle("Add Quarantine Guidelines");
+        getSupportActionBar().setTitle("Quarantine Guidelines");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

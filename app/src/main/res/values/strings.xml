@@ -1,85 +1,239 @@
-<resources>
+<?xml version="1.0"?>
+
+    <resources>
+
     <string name="app_name">Covid Info</string>
+
     <string name="register">REGISTER</string>
+
     <string name="login_email_hint">Email</string>
+
     <string name="login_password_hint">Password</string>
+
     <string name="login_confirn_password_hint">Confirm Password</string>
+
     <string name="signup_login_hint">Already have an account? Sign In</string>
+
     <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
 
-    <string-array name="guide_lines">
-        <item>Place</item>
-        <item>ABC</item>
-        <item>XYZ</item>
-    </string-array>
+
+    -<string-array name="guide_lines">
+
+    <item>Place</item>
+
+    <item>ABC</item>
+
+    <item>XYZ</item>
+
+</string-array>
 
 
-    <string-array name="age">
-        <item>Age</item>
-        <item>18 to 23</item>
-        <item>23 to 28</item>
-        <item>28 to 33</item>
-        <item>33 to 38</item>
-        <item>38 to 43</item>
+    -<string-array name="age">
 
-    </string-array>
+    <item>Age</item>
 
-    <string-array name="country">
-        <item>Country</item>
-        <item>Canada</item>
-        <item>India</item>
+    <item>18 to 23</item>
 
-    </string-array>
+    <item>23 to 28</item>
 
+    <item>28 to 33</item>
 
-    <string-array name="role">
-        <item>Role</item>
-        <item>User</item>
-        <item>Admin</item>
-    </string-array>
+    <item>33 to 38</item>
 
-    <string-array name="province">
-        <item>Province</item>
-        <item>Alberta</item>
-        <item>British Columbia</item>
-        <item>Manitoba</item>
-        <item>New Brunswick</item>
-        <item>Newfoundland and Labrador</item>
-        <item>Northwest Territories</item>
-        <item>Nova Scotia</item>
-        <item>Nunavut</item>
-        <item>Ontario</item>
-        <item>Prince Edward Island</item>
-        <item>Quebec</item>
-        <item>Saskatchewan</item>
-        <item>Yukon</item>
+    <item>38 to 43</item>
 
-    </string-array>
-
-    <string-array name="From">
-        <item>From</item>
-        <item>Quebec</item>
-        <item>Saskatchewan</item>
-        <item>Yukon</item>
-
-    </string-array>
+</string-array>
 
 
-    <string-array name="To">
-        <item>To</item>
-        <item>Newfoundland and Labrador</item>
-        <item>Northwest Territories</item>
-        <item>Nova Scotia</item>
-        <item>Nunavut</item>
-        <item>Ontario</item>
-    </string-array>
+    -<string-array name="country">
 
+    <item>Country</item>
+
+    <item>Canada</item>
+
+    <item>India</item>
+
+</string-array>
+
+
+    -<string-array name="role">
+
+    <item>Role</item>
+
+    <item>User</item>
+
+    <item>Admin</item>
+
+</string-array>
+
+
+    -<string-array name="province">
+
+    <item>Province</item>
+
+    <item>Alberta</item>
+
+    <item>British Columbia</item>
+
+    <item>Manitoba</item>
+
+    <item>New Brunswick</item>
+
+    <item>Newfoundland and Labrador</item>
+
+    <item>Northwest Territories</item>
+
+    <item>Nova Scotia</item>
+
+    <item>Nunavut</item>
+
+    <item>Ontario</item>
+
+    <item>Prince Edward Island</item>
+
+    <item>Quebec</item>
+
+    <item>Saskatchewan</item>
+
+    <item>Yukon</item>
+
+</string-array>
+
+    <string name="RememberMe">Remember Me</string>
+
+
+    -<string-array name="category">
+
+    <item>Please Select Type</item>
+
+    <item>Q</item>
+
+    <item>V</item>
+
+    <item>T</item>
+
+    <item>N</item>
+
+</string-array>
+
+
+    -<string-array name="From">
+
+    <item>From</item>
+
+    <item>Quebec</item>
+
+    <item>Saskatchewan</item>
+
+    <item>Yukon</item>
+
+</string-array>
+
+
+    -<string-array name="To">
+
+    <item>To</item>
+
+    <item>Newfoundland and Labrador</item>
+
+    <item>Northwest Territories</item>
+
+    <item>Nova Scotia</item>
+
+    <item>Nunavut</item>
+
+    <item>Ontario</item>
+
+</string-array>
 
     <string name="read_file">This app needs access to your file storage so that it can read photos.</string>
 
     <string name="Open">Open navigation drawer</string>
+
     <string name="Close">Close navigation drawer</string>
+
     <!-- TODO: Remove or change this placeholder text -->
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    -<string name="self_assement_one">
+Severe difficulty breathing (struggling for each breath, can only speak in single words)
+<br/>
+Severe chest pain (constant tightness or crushing sensation)
+<br/>
+Feeling confused or unsure of where you are Losing consciousness
+</string>
+
+
+    -<string name="ages">
+18 to 29 years old
+<br/>
+30 to 39 years old
+<br/>
+40 to 49 years old
+<br/>
+50 to 59 years old
+<br/>
+60 to 69 years old
+<br/>
+70 to 79 years old
+<br/>
+80 years old or older
+</string>
+
+
+    -<string name="covidtest">
+• visiting, working, or living in a nursing or long-term care home
+<br/>
+• working or living in a homeless shelter or other congregate setting
+<br/>
+• being an international student or farm worker
+</string>
+
+
+    -<string name="symptoms">
+Runny nose
+<br/>
+Difficulty swallowing
+<br/>
+Sore throat
+<br/>
+Fever
+<br/>
+Chills
+<br/>
+Cough thats new or worsening
+<br/>
+Barking cough, making a whistling noise when breathing
+<br/>
+Shortness of breath
+<br/>
+Decrease or loss of taste or sme
+<br/>
+
+</string>
+
+
+    -<string name="physical_contact">
+• is currently sick with a new cough, fever, difficulty breathing, or other symptoms associated with COVID-19?
+<br/>
+
+<br/>
+or
+<br/>
+
+<br/>
+• returned from outside of Canada in the last 2 weeks?
+<br/>
+
+<br/>
+
+<br/>
+Close physical contact means any of the following while not wearing the appropriate personal protective equipment (PPE):
+<br/>
+
+</string>
 
 </resources>

@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -27,13 +28,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-    //LoginScreen
-
     TextView tv_signup,tvForgetPassword;
     Button cirLoginButton;
     ProgressDialog pd;
     EditText editTextEmail,editTextPassword;
     Spinner spinRole;
+    SharedPreferences sharedpreferences;
+    CheckBox chRememberMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +47,13 @@ public class LoginActivity extends AppCompatActivity {
 
         editTextEmail=(EditText)findViewById(R.id.editTextEmail);
         editTextPassword=(EditText)findViewById(R.id.editTextPassword);
-
+        chRememberMe=(CheckBox)findViewById(R.id.chRememberMe);
         tv_signup=(TextView)findViewById(R.id.tv_signup);
         tvForgetPassword=(TextView)findViewById(R.id.tvForgetPassword);
         cirLoginButton=(Button)findViewById(R.id.cirLoginButton);
         spinRole=(Spinner)findViewById(R.id.spinRole);
-        //Adapter linking for User type
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.role, R.layout.spinner_item);
         adapter.setDropDownViewResource(R.layout.spinner_drop_down_list);
-
         spinRole.setAdapter(adapter);
 
         tvForgetPassword.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +63,6 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
 
         tv_signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,53 +75,35 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if(editTextEmail.getText().toString().isEmpty()){
+                    Toast.makeText(LoginActivity.this, "Please Enter Valid Username", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(editTextPassword.getText().toString().isEmpty()){
+                    Toast.makeText(LoginActivity.this, "Please Enter Valid Password", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if (spinRole.getSelectedItem().toString().equals("User")){
-                    if(editTextEmail.getText().toString().isEmpty()){
-                        Toast.makeText(LoginActivity.this, "Please Enter Valid Username", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    if(editTextPassword.getText().toString().isEmpty()){
-                        Toast.makeText(LoginActivity.this, "Please Enter Valid Password", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
                     loginFunction();
-                    //startActivity(new Intent(LoginActivity.this, UserDashBoardActivity.class));
-
 
                 }
-
-
-               else if (spinRole.getSelectedItem().toString().equals("Admin")){
-                    if(editTextEmail.getText().toString().isEmpty()){
-                        Toast.makeText(LoginActivity.this, "Please Enter Valid Username", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    if(editTextPassword.getText().toString().isEmpty()){
-                        Toast.makeText(LoginActivity.this, "Please Enter Valid Password", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
+                if (spinRole.getSelectedItem().toString().equals("Admin")){
                     adminLoginFunction();
 
                 }
-                else {
+                if (spinRole.getSelectedItem().toString().equals("Role")){
                     Toast.makeText(LoginActivity.this, "Please Choose role", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
-
-
-               // loginFunction();
 
             }
         });
     }
-
-    //admin side
     public  void loginFunction() {
         pd= new ProgressDialog(LoginActivity.this);
         pd.setTitle("Please wait,Data is being submit...");
         pd.show();
-        //Instance of the retrofit
         ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
         Call<ResponseData> call = apiService.userLogin(editTextEmail.getText().toString(),editTextPassword.getText().toString());
 
@@ -132,12 +112,32 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 pd.dismiss();
                 if (response.body().status.equals("true")) {
-                    SharedPreferences sharedPreferences = getSharedPreferences(Utils.SHREF, Context.MODE_PRIVATE);
-                    SharedPreferences.Editor et=sharedPreferences.edit();
-                    et.putString("user_name",editTextEmail.getText().toString());
-                    et.commit();
-                    startActivity(new Intent(LoginActivity.this, UserDashBoardActivity.class));
+//                    SharedPreferences sharedPreferences = getSharedPreferences(Utils.SHREF, Context.MODE_PRIVATE);
+//                    SharedPreferences.Editor et=sharedPreferences.edit();
+//                    et.putString("user_name",editTextEmail.getText().toString());
+//                    et.commit();
+//                    startActivity(new Intent(LoginActivity.this, UserDashBoardActivity.class));
+//                    finish();
+
+                    if(chRememberMe.isChecked()) {
+                        sharedpreferences = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+                        editor.putString("is_first", "no");
+                        editor.putString("uname", editTextEmail.getText().toString());
+                        editor.commit();
+                    }else{
+                        sharedpreferences = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+                        editor.putString("uname", editTextEmail.getText().toString());
+                        editor.commit();
+                    }
+                    startActivity(new Intent(getApplicationContext(),UserDashBoardActivity.class));
                     finish();
+
+
+
+
+
                 } else {
                     Toast.makeText(LoginActivity.this, response.body().message, Toast.LENGTH_LONG).show();
                 }
@@ -150,12 +150,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-    //admin side
+
     public  void adminLoginFunction() {
         pd= new ProgressDialog(LoginActivity.this);
         pd.setTitle("Please wait,Data is being submit...");
         pd.show();
-        //Instance of the retrofit
         ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
         Call<ResponseData> call = apiService.adminlogin(editTextEmail.getText().toString(),editTextPassword.getText().toString());
 
