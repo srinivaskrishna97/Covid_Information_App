@@ -1,198 +1,59 @@
-<LinearLayout style="@style/linearParent"
-    android:layout_gravity="center"
-    android:background="@drawable/background"
-    android:padding="@dimen/loginViewsMargin"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0"?>
 
-    <TextView
-        style="@style/headerTextPrimary"
-        android:text="@string/register"
-        android:layout_marginTop="@dimen/loginViewsMargin"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:padding="@dimen/loginViewsMargin" android:background="@drawable/background" android:layout_gravity="center" style="@style/linearParent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/parent"
-        android:textColorHint="#FFFFFF"
-        android:layout_marginTop="@dimen/signup_text_margin_top">
-        <EditText
-            android:id="@+id/etName"
-            style="@style/modifiedEditText"
-            android:textColor="#FFFFFF"
-            android:inputType="text"
-            android:maxLines="1"
-            android:hint="Name"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/parent"
-        android:textColorHint="#FFFFFF"
-        android:layout_marginTop="@dimen/signup_text_margin_top">
-        <EditText
-            android:id="@+id/etEmail"
-            android:textColor="#FFFFFF"
-            style="@style/modifiedEditText"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:hint="@string/login_email_hint"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/parent"
-        android:textColorHint="#FFFFFF"
-        android:layout_marginTop="@dimen/signup_text_margin_top">
-        <EditText
-            android:id="@+id/etPassword"
-            android:textColor="#FFFFFF"
-            style="@style/modifiedEditText"
-            android:hint="@string/login_password_hint"
-            android:maxLines="1"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/parent"
-        android:textColorHint="#FFFFFF"
-        android:layout_marginTop="@dimen/signup_text_margin_top">
-        <EditText
-            android:id="@+id/etConformPass"
-            android:textColor="#FFFFFF"
-            style="@style/modifiedEditText"
-            android:hint="@string/login_confirn_password_hint"
-            android:maxLines="1"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
+    <TextView style="@style/headerTextPrimary" android:layout_marginTop="@dimen/loginViewsMargin" android:text="@string/register"/>
 
 
+    -<com.google.android.material.textfield.TextInputLayout style="@style/parent" android:layout_marginTop="@dimen/signup_text_margin_top" android:textColorHint="#FFFFFF">
+
+    <EditText style="@style/modifiedEditText" android:hint="Name" android:maxLines="1" android:inputType="text" android:textColor="#FFFFFF" android:id="@+id/etName"/>
+
+</com.google.android.material.textfield.TextInputLayout>
 
 
+    -<com.google.android.material.textfield.TextInputLayout style="@style/parent" android:layout_marginTop="@dimen/signup_text_margin_top" android:textColorHint="#FFFFFF">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <EditText style="@style/modifiedEditText" android:hint="@string/login_email_hint" android:maxLines="1" android:inputType="textEmailAddress" android:textColor="#FFFFFF" android:id="@+id/etEmail"/>
 
-        <Spinner
-            android:layout_weight="1.2"
-            android:id="@+id/spinAge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_3sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:entries="@array/age"
-            android:background="@drawable/spinner_bottom_border"
-            android:paddingBottom="10dp" />
+</com.google.android.material.textfield.TextInputLayout>
 
 
+    -<com.google.android.material.textfield.TextInputLayout style="@style/parent" android:layout_marginTop="@dimen/signup_text_margin_top" android:textColorHint="#FFFFFF">
+
+    <EditText style="@style/modifiedEditText" android:hint="@string/login_password_hint" android:maxLines="1" android:inputType="textPassword" android:textColor="#FFFFFF" android:id="@+id/etPassword"/>
+
+</com.google.android.material.textfield.TextInputLayout>
 
 
-        <EditText
-            android:id="@+id/etMobilenumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/modifiedEditText"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_weight="0.8"
-            android:inputType="number"
-            android:maxLines="1"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:paddingBottom="10dp"
-            android:hint="Mobile Number"/>
+    -<com.google.android.material.textfield.TextInputLayout style="@style/parent" android:layout_marginTop="@dimen/signup_text_margin_top" android:textColorHint="#FFFFFF">
+
+    <EditText style="@style/modifiedEditText" android:hint="@string/login_confirn_password_hint" android:maxLines="1" android:inputType="textPassword" android:textColor="#FFFFFF" android:id="@+id/etConformPass"/>
+
+</com.google.android.material.textfield.TextInputLayout>
 
 
+    -<LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="horizontal">
+
+    <Spinner android:background="@drawable/spinner_bottom_border" android:layout_marginTop="@dimen/_3sdp" android:id="@+id/spinAge" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="10dp" android:entries="@array/age" android:layout_marginLeft="@dimen/_10sdp" android:layout_marginRight="@dimen/_10sdp" android:layout_weight="1.2"/>
+
+    <EditText style="@style/modifiedEditText" android:layout_marginTop="@dimen/_5sdp" android:textColorHint="#FFFFFF" android:hint="Mobile Number" android:maxLines="1" android:inputType="number" android:textColor="#FFFFFF" android:id="@+id/etMobilenumber" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="10dp" android:layout_marginLeft="@dimen/_10sdp" android:layout_marginRight="@dimen/_10sdp" android:layout_weight="0.8"/>
+
+</LinearLayout>
 
 
+    -<LinearLayout android:layout_marginTop="@dimen/_13sdp" android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="horizontal">
 
+    <Spinner android:background="@drawable/spinner_bottom_border" android:layout_marginTop="@dimen/_3sdp" android:id="@+id/spinSelectCountry" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="10dp" android:entries="@array/country" android:layout_marginLeft="@dimen/_10sdp" android:layout_marginRight="@dimen/_10sdp" android:layout_weight="1"/>
 
+    <Spinner android:background="@drawable/spinner_bottom_border" android:layout_marginTop="@dimen/_3sdp" android:id="@+id/spinSelectProvince" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="10dp" android:entries="@array/province" android:layout_marginLeft="@dimen/_10sdp" android:layout_marginRight="@dimen/_10sdp" android:layout_weight="1"/>
 
+</LinearLayout>
 
-    </LinearLayout>
+    <Button android:background="@drawable/button_design" android:layout_marginTop="@dimen/_18sdp" android:text="Upload Pic" android:textColor="#000" android:id="@+id/btnUploadImage" android:layout_height="@dimen/_38sdp" android:layout_width="@dimen/_100ssp" android:layout_marginLeft="@dimen/_100sdp" android:layout_marginRight="@dimen/_10sdp" android:textSize="@dimen/_11sdp" android:textAllCaps="false" android:visibility="gone" android:gravity="center"/>
 
+    <Button android:background="@drawable/button_design" android:layout_marginTop="@dimen/_18sdp" android:text="Register" android:textColor="#000" android:id="@+id/btn_register" android:layout_height="@dimen/_38sdp" android:layout_width="match_parent" android:layout_marginLeft="@dimen/_10sdp" android:layout_marginRight="@dimen/_10sdp" android:textSize="@dimen/_15sdp" android:textAllCaps="false" android:gravity="center" android:textStyle="bold"/>
 
-
-    <LinearLayout
-        android:layout_marginTop="@dimen/_13sdp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Spinner
-            android:layout_weight="1"
-            android:id="@+id/spinSelectCountry"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_3sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:entries="@array/country"
-            android:background="@drawable/spinner_bottom_border"
-            android:paddingBottom="10dp" />
-
-
-        <Spinner
-            android:layout_weight="1"
-            android:id="@+id/spinSelectProvince"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_3sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:entries="@array/province"
-            android:background="@drawable/spinner_bottom_border"
-            android:paddingBottom="10dp" />
-
-
-
-
-
-    </LinearLayout>
-
-
-    <Button
-        android:id="@+id/btnUploadImage"
-        android:layout_width="@dimen/_100ssp"
-        android:layout_height="@dimen/_38sdp"
-        android:layout_marginLeft="@dimen/_100sdp"
-        android:layout_marginTop="@dimen/_18sdp"
-        android:layout_marginRight="@dimen/_10sdp"
-        android:background="@drawable/button_design"
-        android:gravity="center"
-        android:text="Upload Pic"
-        android:visibility="gone"
-        android:textAllCaps="false"
-        android:textColor="#000"
-        android:textSize="@dimen/_11sdp" />
-
-
-
-
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_38sdp"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_18sdp"
-        android:layout_marginRight="@dimen/_10sdp"
-        android:background="@drawable/button_design"
-        android:gravity="center"
-        android:text="Register"
-        android:textAllCaps="false"
-        android:textColor="#000"
-        android:textSize="@dimen/_15sdp"
-        android:textStyle="bold" />
-
-
-
-    <TextView
-        android:id="@+id/tv_signin"
-        style="@style/parent"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:text="@string/signup_login_hint"
-        android:layout_marginTop="@dimen/loginViewsMargin"
-        android:gravity="center_horizontal" />
+    <TextView style="@style/parent" android:layout_marginTop="@dimen/loginViewsMargin" android:text="@string/signup_login_hint" android:textColor="#FFFFFF" android:id="@+id/tv_signin" android:gravity="center_horizontal" android:textStyle="bold" android:textAlignment="center"/>
 
 </LinearLayout>
