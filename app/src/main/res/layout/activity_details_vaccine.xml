@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/admin_side_inner_page" android:layout_height="match_parent" android:layout_width="match_parent">
+
+
+    -<androidx.cardview.widget.CardView android:layout_height="match_parent" android:layout_width="match_parent" app:cardMaxElevation="@dimen/_6sdp" app:cardBackgroundColor="#34FDFBFB" android:layout_margin="10dp" app:cardCornerRadius="@dimen/_8sdp" app:cardElevation="@dimen/_2sdp" android:backgroundTint="#FAF6F6" android:id="@+id/cd_search_ride">
+
+
+    -<RelativeLayout android:layout_height="match_parent" android:layout_width="match_parent" android:padding="@dimen/_6sdp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/tvCovidLatestUpdate" android:fontFamily="@font/graphikmedium" android:textColor="#000" android:textSize="@dimen/_16sdp" android:layout_marginTop="@dimen/_10sdp" android:layout_marginLeft="@dimen/_13sdp"/>
+
+    <ImageView android:layout_height="@dimen/_100sdp" android:layout_width="@dimen/_100sdp" android:id="@+id/imageView" android:layout_marginTop="@dimen/_30sdp" android:scaleType="centerInside" android:layout_below="@+id/tvCovidLatestUpdate" android:src="@drawable/vc" android:layout_centerHorizontal="true"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/tvCovidDesc" android:fontFamily="@font/graphikregular" android:textColor="#000" android:textSize="@dimen/_13sdp" android:layout_marginTop="@dimen/_30sdp" android:layout_marginLeft="@dimen/_13sdp" android:layout_below="@+id/imageView"/>
+
+    <Button android:background="#4A2A6F" android:layout_height="40dp" android:layout_width="@dimen/_105sdp" android:id="@+id/btn_back" android:textColor="#ffffff" android:layout_marginTop="20dp" android:layout_marginLeft="@dimen/_20sdp" android:layout_below="@+id/tvCovidDesc" android:textAllCaps="false" android:text="Back" android:layout_marginRight="21dp" android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
+</RelativeLayout>

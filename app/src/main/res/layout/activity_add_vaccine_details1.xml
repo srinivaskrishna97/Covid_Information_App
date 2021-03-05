@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-    -<LinearLayout android:orientation="vertical" android:background="@drawable/admin_side_inner_page" android:gravity="center" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/admin_side_inner_page" android:gravity="center" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
 
     <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:textSize="@dimen/_14sdp" android:textColorHint="#000" android:textColor="#000" android:paddingBottom="10dp" android:hint="Title" android:layout_marginRight="@dimen/_10sdp" android:layout_marginTop="@dimen/_15sdp" android:layout_marginLeft="@dimen/_10sdp" style="@style/modifiedEditText1" android:id="@+id/etTitle"/>
 
