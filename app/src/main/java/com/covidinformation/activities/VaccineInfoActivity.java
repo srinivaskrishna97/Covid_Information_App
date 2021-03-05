@@ -41,59 +41,7 @@ public class VaccineInfoActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        btnAddVaccine = (Button) findViewById(R.id.btnAddVaccine);
-        btnAddVaccine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(VaccineInfoActivity.this, AddVaccineDetailsActivity.class));
-                finish();
-
-            }
-        });
-        list_view = (ListView) findViewById(R.id.list_view);
-        vaccinePojos = new ArrayList<>();
-        GetAllNews();
-
-    }
-
-    public void GetAllNews() {
-        progressDialog = new ProgressDialog(VaccineInfoActivity.this);
-        progressDialog.setMessage("Loading....");
-        progressDialog.show();
-
-        ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
-        Call<List<VaccinePojo>> call = service.getvaccine();
-        call.enqueue(new Callback<List<VaccinePojo>>() {
-            @Override
-            public void onResponse(Call<List<VaccinePojo>> call, Response<List<VaccinePojo>> response) {
-                progressDialog.dismiss();
-                if (response.body() == null) {
-                    Toast.makeText(VaccineInfoActivity.this, "No data found", Toast.LENGTH_SHORT).show();
-                } else {
-                    vaccinePojos = response.body();
-                    list_view.setAdapter(new VaccineInfoAdapter(VaccineInfoActivity.this, vaccinePojos));
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<VaccinePojo>> call, Throwable t) {
-                progressDialog.dismiss();
-                Toast.makeText(VaccineInfoActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
 }
-
 

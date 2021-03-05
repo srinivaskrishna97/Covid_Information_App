@@ -16,6 +16,10 @@ public class GetQGPojo {
     @SerializedName("qid")
     public String qid;
 
+
+    @SerializedName("tid")
+    public String tid;
+
     public String getCountry() {
         return country;
     }
@@ -46,5 +50,13 @@ public class GetQGPojo {
 
     public void setQid(String qid) {
         this.qid = qid;
+    }
+
+    public String getTid() {
+        return tid;
+    }
+
+    public void setTid(String tid) {
+        this.tid = tid;
     }
 }

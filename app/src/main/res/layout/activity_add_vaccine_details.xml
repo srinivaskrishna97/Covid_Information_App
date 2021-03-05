@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-    <RelativeLayout android:layout_height="match_parent" android:background="@drawable/admin_side_inner_page" android:layout_width="match_parent" android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@drawable/admin_side_inner_page"
+    android:layout_height="match_parent">
 
-    <Button android:layout_height="@dimen/_28ssp" android:background="@drawable/btn_design_2" android:layout_width="wrap_content" android:drawablePadding="@dimen/_6ssp" android:drawableLeft="@drawable/ic_baseline_add_circle_outline_24" android:layout_margin="@dimen/_6ssp" android:padding="@dimen/_6ssp" android:layout_alignParentRight="true" android:text="Add Vaccine" android:textColor="#ffffff" android:layout_gravity="center" android:id="@+id/btnAddVaccine"/>
+    <Button
+        android:id="@+id/btnAddVaccine"
+        android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:text="Add Vaccine"
+        android:layout_alignParentRight="true"
+        android:padding="@dimen/_6ssp"
+        android:layout_margin="@dimen/_6ssp"
+        android:drawableLeft="@drawable/ic_baseline_add_circle_outline_24"
+        android:drawablePadding="@dimen/_6ssp"
+        android:background="@drawable/btn_design_2"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_28ssp"/>
 
-    <ListView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/list_view" android:divider="@null" android:layout_below="@+id/btnAddVaccine"> </ListView>
+
+    <ListView
+        android:layout_below="@+id/btnAddVaccine"
+        android:id="@+id/list_view"
+        android:divider="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
 
 </RelativeLayout>

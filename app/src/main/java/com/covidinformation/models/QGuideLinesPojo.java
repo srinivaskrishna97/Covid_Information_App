@@ -1,5 +1,6 @@
 package com.covidinformation.models;
 
+
 import com.google.gson.annotations.SerializedName;
 
 public class QGuideLinesPojo {
@@ -13,7 +14,7 @@ public class QGuideLinesPojo {
     @SerializedName("province")
     public String province;
 
-    @SerializedName("qid")
+    @SerializedName("tid")
     public String qid;
 
     public String getCountry() {

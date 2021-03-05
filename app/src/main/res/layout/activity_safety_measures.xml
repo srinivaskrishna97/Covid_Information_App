@@ -18,57 +18,58 @@
 </RelativeLayout>
 
 
-<!--
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/image1"
-        android:src="@drawable/safety_1"
-        android:scaleType="fitXY"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ImageView>
+        <ImageView
+            android:id="@+id/image1"
+            android:src="@drawable/safety_1"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ImageView>
 
-    <ImageView
-        android:id="@+id/image2"
-        android:src="@drawable/safety_2"
-        android:scaleType="fitXY"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ImageView>
+        <ImageView
+            android:id="@+id/image2"
+            android:src="@drawable/safety_2"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ImageView>
 
-    <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_weight="1"
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            android:textColor="@color/buttons"
-            app:backgroundTint="@color/white"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_weight="1"
-            android:id="@+id/btnNext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Next"
-            android:textColor="@color/buttons"
-            app:backgroundTint="@color/white"/>
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
-    </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_weight="1"
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:textColor="@color/buttons"
+                app:backgroundTint="@color/white"/>
 
-</RelativeLayout>
--->
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_weight="1"
+                android:id="@+id/btnNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next"
+                android:textColor="@color/buttons"
+                app:backgroundTint="@color/white"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    -->
+
