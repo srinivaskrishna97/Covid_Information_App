@@ -31,7 +31,7 @@ public class MapFragment  extends Fragment {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_map, container, false);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Health Map");
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("World Map");
 
         webview = (WebView)view.findViewById(R.id.articleWebView);
         String url="https://www.healthmap.org/covid-19/";
