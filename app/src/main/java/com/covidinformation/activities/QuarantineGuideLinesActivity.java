@@ -42,7 +42,7 @@ public class QuarantineGuideLinesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quarantine_guide_lines);
 
-        getSupportActionBar().setTitle("Quarantine GuideLines");
+        getSupportActionBar().setTitle(" ");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -69,6 +69,11 @@ public class QuarantineGuideLinesActivity extends AppCompatActivity {
                     String selectedItem = parent.getItemAtPosition(position).toString();
                     quarantineGuidelinesAdapter.getQGuideLines(selectedItem);
                 }
+                else
+                {
+                    if(guidencePojoList.size()>0)
+                    quarantineGuidelinesAdapter.getQGuideLines("");
+                }
 
 
             } // to close the onItemSelected
@@ -77,6 +82,14 @@ public class QuarantineGuideLinesActivity extends AppCompatActivity {
                 AllGetQuerentineGuidence();
             }
         });
+
+
+        if(spinProveience.getSelectedItem().toString().equals("Province"))
+        {
+            AllGetQuerentineGuidence();
+        }
+
+
         list_view=(ListView)findViewById(R.id.list_view);
         guidencePojoList=new ArrayList<>();
 

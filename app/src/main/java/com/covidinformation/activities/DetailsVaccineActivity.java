@@ -31,7 +31,7 @@ public class DetailsVaccineActivity extends AppCompatActivity {
 
         tvCovidLatestUpdate.setText(getIntent().getStringExtra("title"));
         tvCovidDesc.setText(getIntent().getStringExtra("desc"));
-        // Glide.with(DetailsVaccineActivity.this).load(getIntent().getStringExtra("image")).into(imageView);
+       // Glide.with(DetailsVaccineActivity.this).load(getIntent().getStringExtra("image")).into(imageView);
 
         btn_back=(Button)findViewById(R.id.btn_back);
         btn_back.setOnClickListener(new View.OnClickListener() {

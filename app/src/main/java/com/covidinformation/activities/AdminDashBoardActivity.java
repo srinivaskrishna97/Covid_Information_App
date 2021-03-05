@@ -1,8 +1,10 @@
 package com.covidinformation.activities;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,12 +15,12 @@ import com.covidinformation.R;
 
 public class AdminDashBoardActivity extends AppCompatActivity {
     CardView cdAddNews,cdAddCovidCenters,cdCouuntryReports,cdTravellGuidence,cdNotifications,cdQuarantineGuideLines,cdvaccinedetails;
-
+    AlertDialog.Builder builder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dash_board);
-
+        builder = new AlertDialog.Builder(this);
         getSupportActionBar().setTitle("Dashboard");
         /*getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
@@ -104,6 +106,32 @@ public class AdminDashBoardActivity extends AppCompatActivity {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public void onBackPressed() {
+        //Uncomment the below code to Set the message and title from the strings.xml file
+
+
+        //Setting message manually and performing action on button click
+        builder.setMessage("Do you want to close this application ?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //  Action for 'NO' Button
+                        dialog.cancel();
+
+                    }
+                });
+        //Creating dialog box
+        AlertDialog alert = builder.create();
+        //Setting the title manually
+        alert.setTitle("CovidInfo");
+        alert.show();
     }
 
 

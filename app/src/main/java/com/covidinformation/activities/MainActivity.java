@@ -28,19 +28,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,LoginActivity.class));
-                finish();
+                //finish();
 
 
             }
         });
-
         btnRegister=(Button)findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 startActivity(new Intent(MainActivity.this,RegistrationActivity.class));
-                finish();
+                //finish();
 
             }
         });

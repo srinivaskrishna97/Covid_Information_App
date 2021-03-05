@@ -1,4 +1,5 @@
 package com.covidinformation.activities;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;

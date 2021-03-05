@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.covidinformation.R;
@@ -54,7 +55,7 @@ public class AddNewsActivity extends AppCompatActivity implements EasyPermission
     String session;
     Button btnUploadimg,btnSubmit;
     EditText etTitle,etDesc;
-
+ImageView iv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +67,7 @@ public class AddNewsActivity extends AppCompatActivity implements EasyPermission
 
         etTitle=(EditText)findViewById(R.id.etTitle);
         etDesc=(EditText)findViewById(R.id.etDesc);
+        iv=(ImageView)findViewById(R.id.iv);
 //Start
         Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.no_img);
         String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)+"/LatestShare.jpg";
@@ -90,7 +92,6 @@ public class AddNewsActivity extends AppCompatActivity implements EasyPermission
                 Intent openGalleryIntent = new Intent(Intent.ACTION_PICK);
                 openGalleryIntent.setType("image/*");
                 startActivityForResult(openGalleryIntent, REQUEST_GALLERY_CODE);
-
             }
         });
         btnSubmit=(Button)findViewById(R.id.btnSubmit);
@@ -112,6 +113,7 @@ public class AddNewsActivity extends AppCompatActivity implements EasyPermission
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == REQUEST_GALLERY_CODE && resultCode == Activity.RESULT_OK){
             uri = data.getData();
+            iv.setImageURI(uri);
             if(EasyPermissions.hasPermissions(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
                 String filePath = getRealPathFromURIPath(uri, AddNewsActivity.this);
                 file = new File(filePath);

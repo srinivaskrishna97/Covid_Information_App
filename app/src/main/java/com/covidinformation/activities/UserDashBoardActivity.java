@@ -2,6 +2,7 @@ package com.covidinformation.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.ActionBar;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -31,12 +33,12 @@ import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
 
 public class UserDashBoardActivity extends AppCompatActivity {
-
+    AlertDialog.Builder builder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
-
+        builder = new AlertDialog.Builder(this);
         getSupportActionBar().setTitle("Dashboard");
         bottomNavigation();
     }
@@ -64,8 +66,7 @@ public class UserDashBoardActivity extends AppCompatActivity {
                                 selectedFragment = HomeScreenFragment.homeScreenFragment();
                                 break;
                             case R.id.map:
-                                Intent myIntent = new Intent(UserDashBoardActivity.this, MapActivity.class);
-                                startActivity(myIntent);
+                                selectedFragment = MapFragment.mapFragment();
                                 break;
                             case R.id.myprofile:
                                 selectedFragment = MyProfileFragment.myProfileFragment();
@@ -82,5 +83,30 @@ public class UserDashBoardActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    @Override
+    public void onBackPressed() {
+        //Uncomment the below code to Set the message and title from the strings.xml file
 
+
+        //Setting message manually and performing action on button click
+        builder.setMessage("Do you want to close this application ?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //  Action for 'NO' Button
+                        dialog.cancel();
+
+                    }
+                });
+        //Creating dialog box
+        AlertDialog alert = builder.create();
+        //Setting the title manually
+        alert.setTitle("CovidInfo");
+        alert.show();
+    }
 }

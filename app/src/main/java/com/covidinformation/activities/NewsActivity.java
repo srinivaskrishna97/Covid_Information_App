@@ -12,12 +12,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.covidinformation.R;
+import com.covidinformation.adapters.GetAllNewsAdapter;
 import com.covidinformation.adapters.NewsInfoAdapter;
-import com.covidinformation.adapters.VaccineInfoAdapter;
 import com.covidinformation.api.ApiService;
 import com.covidinformation.api.RetroClient;
 import com.covidinformation.models.GetAllNewsPojo;
-import com.covidinformation.models.VaccinePojo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,59 +25,51 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class VaccineInfoActivity extends AppCompatActivity {
-    Button btnAddVaccine;
-    List<VaccinePojo> vaccinePojos;
+public class NewsActivity extends AppCompatActivity {
+    Button btnAddNews;
+    List<GetAllNewsPojo> getAllNewsPojo;
     ListView list_view;
     ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_vaccine_details);
+        setContentView(R.layout.activity_news);
 
-        getSupportActionBar().setTitle("Vaccine Details");
+        getSupportActionBar().setTitle(" ");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        btnAddVaccine = (Button) findViewById(R.id.btnAddVaccine);
-        btnAddVaccine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(VaccineInfoActivity.this, AddVaccineDetailsActivity.class));
-                finish();
 
-            }
-        });
         list_view = (ListView) findViewById(R.id.list_view);
-        vaccinePojos = new ArrayList<>();
+        getAllNewsPojo = new ArrayList<>();
         GetAllNews();
 
     }
 
     public void GetAllNews() {
-        progressDialog = new ProgressDialog(VaccineInfoActivity.this);
+        progressDialog = new ProgressDialog(NewsActivity.this);
         progressDialog.setMessage("Loading....");
         progressDialog.show();
 
         ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
-        Call<List<VaccinePojo>> call = service.getvaccine();
-        call.enqueue(new Callback<List<VaccinePojo>>() {
+        Call<List<GetAllNewsPojo>> call = service.getAllNews();
+        call.enqueue(new Callback<List<GetAllNewsPojo>>() {
             @Override
-            public void onResponse(Call<List<VaccinePojo>> call, Response<List<VaccinePojo>> response) {
+            public void onResponse(Call<List<GetAllNewsPojo>> call, Response<List<GetAllNewsPojo>> response) {
                 progressDialog.dismiss();
                 if (response.body() == null) {
-                    Toast.makeText(VaccineInfoActivity.this, "No data found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewsActivity.this, "No data found", Toast.LENGTH_SHORT).show();
                 } else {
-                    vaccinePojos = response.body();
-                    list_view.setAdapter(new VaccineInfoAdapter(VaccineInfoActivity.this, vaccinePojos));
+                    getAllNewsPojo = response.body();
+                    list_view.setAdapter(new GetAllNewsAdapter(NewsActivity.this, getAllNewsPojo));
                 }
             }
 
             @Override
-            public void onFailure(Call<List<VaccinePojo>> call, Throwable t) {
+            public void onFailure(Call<List<GetAllNewsPojo>> call, Throwable t) {
                 progressDialog.dismiss();
-                Toast.makeText(VaccineInfoActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewsActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
     }

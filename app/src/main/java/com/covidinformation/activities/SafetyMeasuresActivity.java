@@ -23,7 +23,7 @@ public class SafetyMeasuresActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_safety_measures);
 
-        getSupportActionBar().setTitle("Safety Measures");
+        getSupportActionBar().setTitle(" ");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -44,6 +44,11 @@ public class SafetyMeasuresActivity extends AppCompatActivity {
 
         imageSlider.setImageList(slideModels,false);
 
+
+
+
+
+
     }
 
     @Override
@@ -56,3 +61,4 @@ public class SafetyMeasuresActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+}

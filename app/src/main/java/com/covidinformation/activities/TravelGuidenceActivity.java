@@ -42,7 +42,7 @@ public class TravelGuidenceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travel_guidence);
 
-        getSupportActionBar().setTitle("Travel Guidencs");
+        getSupportActionBar().setTitle(" ");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         spinProveience = (Spinner) findViewById(R.id.spinProveience);
@@ -67,6 +67,12 @@ public class TravelGuidenceActivity extends AppCompatActivity {
                 if (position>0){
                     String text = spinProveience.getSelectedItem().toString().toLowerCase(Locale.getDefault());
                     travelGuidenceAdapter.guidenceFilter(text);
+                }
+
+                else
+                {
+                    if(guidencePojoList.size()>0)
+                        travelGuidenceAdapter.guidenceFilter("");
                 }
 
             }
