@@ -57,7 +57,7 @@ public class NewsInfoActivity extends AppCompatActivity {
 
     public void GetAllNews() {
         progressDialog = new ProgressDialog(NewsInfoActivity.this);
-        progressDialog.setMessage("Loading....");
+        progressDialog.setMessage("Loading.....");
         progressDialog.show();
 
         ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
@@ -67,7 +67,7 @@ public class NewsInfoActivity extends AppCompatActivity {
             public void onResponse(Call<List<GetAllNewsPojo>> call, Response<List<GetAllNewsPojo>> response) {
                 progressDialog.dismiss();
                 if (response.body() == null) {
-                    Toast.makeText(NewsInfoActivity.this, "No data found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewsInfoActivity.this, "No Data Found", Toast.LENGTH_SHORT).show();
                 } else {
                     getAllNewsPojo = response.body();
                     list_view.setAdapter(new NewsInfoAdapter(NewsInfoActivity.this, getAllNewsPojo));
@@ -77,7 +77,7 @@ public class NewsInfoActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<GetAllNewsPojo>> call, Throwable t) {
                 progressDialog.dismiss();
-                Toast.makeText(NewsInfoActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewsInfoActivity.this, "Something went wrong....Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
     }
