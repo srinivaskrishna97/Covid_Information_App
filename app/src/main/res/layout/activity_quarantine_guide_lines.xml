@@ -5,21 +5,45 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/admin_side_inner_page"
     tools:context=".activities.QuarantineGuideLinesActivity">
 
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:orientation="vertical"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="20dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mybutton2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/graphikmedium"
+            android:text="Quarantine Guidliance"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
     <Spinner
+        android:layout_below="@+id/ll"
         android:id="@+id/spinProveience"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_40ssp"
+        android:layout_marginLeft="@dimen/_20ssp"
         android:layout_marginTop="@dimen/_15ssp"
-        android:layout_marginRight="@dimen/_40ssp"
+        android:layout_marginRight="@dimen/_20ssp"
         android:layout_weight="1"
         android:background="@drawable/spinner_border_black"
         android:entries="@array/province"
         android:paddingBottom="10dp" />
 
     <Button
+        android:visibility="gone"
         android:id="@+id/btnSubmit"
         android:layout_gravity="center"
         android:textColor="#ffffff"
@@ -27,7 +51,7 @@
         android:layout_alignParentRight="true"
         android:padding="@dimen/_6ssp"
         android:layout_below="@+id/spinProveience"
-        android:layout_marginTop="@dimen/_15ssp"
+        android:layout_marginTop="@dimen/_5ssp"
         android:layout_marginRight="@dimen/_35ssp"
         android:layout_marginBottom="@dimen/_4ssp"
         android:drawablePadding="@dimen/_6ssp"
@@ -39,7 +63,7 @@
 
     <ListView
         android:layout_below="@+id/btnSubmit"
-        android:layout_marginTop="@dimen/_15ssp"
+        android:layout_marginTop="@dimen/_5ssp"
         android:id="@+id/list_view"
         android:divider="@null"
         android:layout_width="match_parent"
