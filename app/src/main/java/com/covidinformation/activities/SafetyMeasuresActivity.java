@@ -44,11 +44,6 @@ public class SafetyMeasuresActivity extends AppCompatActivity {
 
         imageSlider.setImageList(slideModels,false);
 
-
-
-
-
-
     }
 
     @Override
@@ -61,4 +56,3 @@ public class SafetyMeasuresActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-}
