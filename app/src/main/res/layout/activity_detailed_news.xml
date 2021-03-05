@@ -2,6 +2,7 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/admin_side_inner_page"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -13,7 +14,7 @@
         app:cardElevation="@dimen/_2sdp"
         app:cardCornerRadius="@dimen/_8sdp"
         android:layout_margin="10dp"
-        app:cardBackgroundColor="#fff"
+        app:cardBackgroundColor="#34FDFBFB"
         app:cardMaxElevation="@dimen/_6sdp">
 
         <RelativeLayout
@@ -40,30 +41,7 @@
                 android:layout_height="@dimen/_100sdp"
                 android:scaleType="centerInside" />
 
-            <TextView
-                android:id="@+id/tvCovidDesc"
-                android:layout_width="match_parent"
-                android:layout_below="@+id/imageView"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/_13sdp"
-                android:layout_marginLeft="@dimen/_13sdp"
-                android:layout_marginTop="@dimen/_30sdp"
-                android:fontFamily="@font/graphikregular"
-                android:textColor="#000"/>
 
-
-            <Button
-                android:id="@+id/btn_back"
-                android:layout_width="@dimen/_105sdp"
-                android:layout_height="40dp"
-                android:layout_below="@+id/tvCovidDesc"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginRight="21dp"
-                android:background="@drawable/button_design"
-                android:text="Back"
-                android:textAllCaps="false"
-                android:textColor="#ffffff" />
 
 
         </RelativeLayout>
