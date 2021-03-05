@@ -133,7 +133,10 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     startActivity(new Intent(getApplicationContext(),UserDashBoardActivity.class));
                     finish();
-                    
+
+
+
+
 
                 } else {
                     Toast.makeText(LoginActivity.this, response.body().message, Toast.LENGTH_LONG).show();
@@ -147,6 +150,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
     public  void adminLoginFunction() {
         pd= new ProgressDialog(LoginActivity.this);
         pd.setTitle("Please wait,Data is being submit...");
@@ -165,11 +169,6 @@ public class LoginActivity extends AppCompatActivity {
                     et.commit();
                     startActivity(new Intent(LoginActivity.this, AdminDashBoardActivity.class));
                     finish();
-
-
-
-
-
                 } else {
                     Toast.makeText(LoginActivity.this, response.body().message, Toast.LENGTH_LONG).show();
                 }
