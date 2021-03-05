@@ -30,3 +30,60 @@ public class EditNewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_news);
 
+        getSupportActionBar().setTitle("Edit News");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        etTitle=(EditText)findViewById(R.id.etTitle);
+        etTitle.setText(getIntent().getStringExtra("title"));
+
+        etDesc=(EditText)findViewById(R.id.etDesc);
+        etDesc.setText(getIntent().getStringExtra("desc"));
+
+        btnUpdate=(Button)findViewById(R.id.btnUpdate);
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateNews();
+            }
+        });
+    }
+    public  void updateNews() {
+        pd= new ProgressDialog(EditNewsActivity.this);
+        pd.setTitle("Please wait,Data is being submit...");
+        pd.show();
+        ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
+        Call<ResponseData> call = apiService.editnews(etTitle.getText().toString(),etDesc.getText().toString(),getIntent().getStringExtra("nid"));
+
+        call.enqueue(new Callback<ResponseData>() {
+            @Override
+            public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
+                pd.dismiss();
+                if (response.body().status.equals("true")) {
+                    startActivity(new Intent(EditNewsActivity.this, NewsInfoActivity.class));
+                    finish();
+                } else {
+                    Toast.makeText(EditNewsActivity.this, response.body().message, Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseData> call, Throwable t) {
+                pd.dismiss();
+                Toast.makeText(EditNewsActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+}
