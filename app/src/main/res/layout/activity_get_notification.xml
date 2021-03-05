@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/admin_side_inner_page"
+    tools:context=".activities.QuarantineGuideLinesActivity">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:orientation="vertical"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="20dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mybutton2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/graphikmedium"
+            android:text="Notifications"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+
+
+    <ListView
+        android:layout_below="@+id/ll"
+        android:layout_marginTop="@dimen/_5ssp"
+        android:id="@+id/list_view"
+        android:divider="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+
+</RelativeLayout>

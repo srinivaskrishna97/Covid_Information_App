@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/admin_side_inner_page"
+    tools:context=".activities.SelfAssementOneActivity">
+
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:orientation="vertical"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="20dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mybutton2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/graphikmedium"
+            android:text="Self Assessment"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_13sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/graphiksemibold"
+        android:padding="@dimen/_6ssp"
+        android:text="Self Assessment Guidelines"
+        android:textColor="#000"
+        android:textSize="@dimen/_16sdp" />
+
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:layout_marginRight="@dimen/_13ssp"
+        android:fontFamily="@font/graphikmedium"
+        android:text="Based on your answers, you do not seem to have symptoms or have been exposed to COVID-19. You can get a COVID-19 test because you need one for a specific reason."
+        android:textColor="#000"
+        android:textSize="@dimen/_16sdp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50ssp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnYes"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35ssp"
+            android:layout_marginRight="@dimen/_6ssp"
+            android:background="#4A2A6F"
+            android:text="Yes"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/btnNo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35ssp"
+            android:background="#4A2A6F"
+            android:text="No"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
