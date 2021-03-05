@@ -89,7 +89,7 @@ public class GetQuarantineGuidelinesAdapter extends BaseAdapter {
 
                 deleteQGuidelines(getQGPojos.get(position).getQid());
 
-                //Toast.makeText(context,getQGPojos.get(position).getQid().toString(),Toast.LENGTH_LONG).show();
+
 
             }
         });

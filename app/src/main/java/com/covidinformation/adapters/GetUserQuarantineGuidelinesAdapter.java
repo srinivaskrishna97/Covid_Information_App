@@ -33,8 +33,7 @@ public class GetUserQuarantineGuidelinesAdapter extends BaseAdapter {
     String URL = "http://covidinformation.live/covid/";
 
     public GetUserQuarantineGuidelinesAdapter(Context context, List<QGuideLinesPojo> getQGPojo1) {
-        /*this.context=context;
-        this.getQGPojos=getQGPojo;*/
+
 
         this.searchGuidens = getQGPojo1;
         this.context = context;
