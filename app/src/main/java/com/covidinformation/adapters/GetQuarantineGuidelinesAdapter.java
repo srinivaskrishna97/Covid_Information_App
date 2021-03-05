@@ -1,5 +1,6 @@
 package com.covidinformation.adapters;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +18,8 @@ import com.covidinformation.R;
 import com.covidinformation.activities.AddQuarantineGuidelinesActivity;
 import com.covidinformation.activities.CovidCentersInfoActivity;
 import com.covidinformation.activities.DetailedNewsActivity;
+import com.covidinformation.activities.EditQuarantineActivity;
+import com.covidinformation.activities.EditTravellActivity;
 import com.covidinformation.api.ApiService;
 import com.covidinformation.api.RetroClient;
 import com.covidinformation.models.GetAllNewsPojo;
@@ -67,6 +70,14 @@ public class GetQuarantineGuidelinesAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
 
+                Intent intent=new Intent(context, EditQuarantineActivity.class);
+                intent.putExtra("qid",getQGPojos.get(position).getQid());
+                intent.putExtra("provience",getQGPojos.get(position).getProvince());
+                intent.putExtra("country",getQGPojos.get(position).getCountry());
+                intent.putExtra("desc",getQGPojos.get(position).getDescription());
+                context.startActivity(intent);
+
+
             }
         });
 
@@ -77,6 +88,9 @@ public class GetQuarantineGuidelinesAdapter extends BaseAdapter {
             public void onClick(View v) {
 
                 deleteQGuidelines(getQGPojos.get(position).getQid());
+
+                //Toast.makeText(context,getQGPojos.get(position).getQid().toString(),Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -99,13 +113,15 @@ public class GetQuarantineGuidelinesAdapter extends BaseAdapter {
                 }else {
                     Intent intent=new Intent(context, AddQuarantineGuidelinesActivity.class);
                     context.startActivity(intent);
-                    Toast.makeText(context," Center Deleted successfully",Toast.LENGTH_SHORT).show();
+                    ((Activity)context).finish();
+                    Toast.makeText(context,"Deleted successfully",Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
             public void onFailure(Call<ResponseData> call, Throwable t) {
                 progressDialog.dismiss();
-                Toast.makeText(context, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(context, "Something went wrong...Please try later!"+t, Toast.LENGTH_SHORT).show();
             }
         });
     }
