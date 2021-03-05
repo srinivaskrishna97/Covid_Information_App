@@ -1,6 +1,7 @@
 package com.covidinformation.api;
 
 import com.covidinformation.models.EditProfilePojo;
+import com.covidinformation.models.Faqs;
 import com.covidinformation.models.GetAllNewsPojo;
 import com.covidinformation.models.GetCovidCentersPojo;
 import com.covidinformation.models.GetQGPojo;
@@ -89,6 +90,8 @@ public interface ApiService {
     @GET("covid/getvaccine.php")
     Call<List<VaccinePojo>> getvaccine();
 
+    @GET("covid/getfaqs.php")
+    Call<List<Faqs>> getfaqs();
 
     @GET("covid/searchquarantine.php")
     Call<List<QGuideLinesPojo>> searchquarantine(@Query("province") String province);
