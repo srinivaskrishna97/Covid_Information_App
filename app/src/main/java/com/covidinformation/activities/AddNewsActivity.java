@@ -9,8 +9,11 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.MenuItem;
@@ -24,6 +27,8 @@ import com.covidinformation.api.ApiService;
 import com.covidinformation.models.ResponseData;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -61,7 +66,23 @@ public class AddNewsActivity extends AppCompatActivity implements EasyPermission
 
         etTitle=(EditText)findViewById(R.id.etTitle);
         etDesc=(EditText)findViewById(R.id.etDesc);
-
+//Start
+        Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.no_img);
+        String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)+"/LatestShare.jpg";
+        OutputStream out = null;
+        File file1=new File(path);
+        try {
+            out = new FileOutputStream(file1);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+            out.flush();
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        path=file1.getPath();
+        Uri bmpUri = Uri.parse("file://"+path);
+        file = new File(bmpUri.getPath());
+        //End
         btnUploadimg=(Button)findViewById(R.id.btnUploadimg);
         btnUploadimg.setOnClickListener(new View.OnClickListener() {
             @Override
