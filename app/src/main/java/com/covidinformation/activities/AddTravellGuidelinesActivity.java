@@ -41,7 +41,7 @@ public class AddTravellGuidelinesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_travell);
 
-        getSupportActionBar().setTitle("Add Travell Guidelines");
+        getSupportActionBar().setTitle("Travel Guidelines");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
