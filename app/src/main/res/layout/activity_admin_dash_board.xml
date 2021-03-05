@@ -3,160 +3,249 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:background="@drawable/admindashboard"
+
     android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cdQuarantineGuideLines"
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="right"
+        android:src="@drawable/group"/>
+
+    <TextView
+        android:layout_marginTop="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Admin!"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_marginLeft="20dp"
+        android:textSize="16dp"
+        android:layout_marginBottom="30dp"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#8ACDC7"
-        app:cardCornerRadius="@dimen/_3sdp"
-        app:cardElevation="@dimen/_2sdp"
-        app:cardMaxElevation="@dimen/_3sdp">
+        android:orientation="vertical"
+        android:layout_marginLeft="50dp">
 
-        <TextView
-            android:id="@+id/tvQuarantineGuidelines"
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cdQuarantineGuideLines"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/graphikregular"
-            android:gravity="center"
-            android:padding="@dimen/_20sdp"
-            android:text="Quarantine Guidelines "
-            android:textColor="#000"
-            android:textSize="@dimen/_15sdp" />
+            android:layout_margin="10dp"
+            android:background="@drawable/mybutton"
+            app:cardBackgroundColor="#4A2A6F"
 
-    </androidx.cardview.widget.CardView>
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardMaxElevation="@dimen/_3sdp">
+
+            <TextView
+                android:id="@+id/tvQuarantineGuidelines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/graphikregular"
+                android:gravity="center"
+
+                android:padding="@dimen/_10sdp"
+                android:text="Quarantine Guidelines "
+                android:textColor="#fff"
+                android:textSize="@dimen/_15sdp" />
+
+        </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView
-        android:visibility="gone"
-        android:id="@+id/cdCouuntryReports"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#8ACDC7"
-        app:cardCornerRadius="@dimen/_3sdp"
-        app:cardElevation="@dimen/_2sdp"
-        app:cardMaxElevation="@dimen/_3sdp">
-
-        <TextView
-            android:id="@+id/tvCouuntryReports"
+        <androidx.cardview.widget.CardView
+            android:visibility="gone"
+            android:id="@+id/cdCouuntryReports"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/graphikregular"
-            android:gravity="center"
-            android:padding="@dimen/_20sdp"
-            android:text="Country Reports"
-            android:textColor="#000"
-            android:textSize="@dimen/_15sdp" />
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#4A2A6F"
+            app:cardCornerRadius="@dimen/_3sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardMaxElevation="@dimen/_3sdp">
 
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvCouuntryReports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/graphikregular"
+                android:gravity="center"
+                android:padding="@dimen/_20sdp"
+                android:text="Country Reports"
+                android:textColor="#fff"
+                android:textSize="@dimen/_15sdp" />
+
+        </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cdTravellGuidence"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cdCouuntryReports"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#8ACDC7"
-        app:cardCornerRadius="@dimen/_3sdp"
-        app:cardElevation="@dimen/_2sdp"
-        app:cardMaxElevation="@dimen/_3sdp">
-
-        <TextView
-            android:id="@+id/tvTravellGuidence"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cdTravellGuidence"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/graphikregular"
-            android:gravity="center"
-            android:padding="@dimen/_20sdp"
-            android:text="Travel Guidence"
-            android:textColor="#000"
-            android:textSize="@dimen/_15sdp" />
+            android:layout_below="@+id/cdCouuntryReports"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#4A2A6F"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardMaxElevation="@dimen/_3sdp">
 
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvTravellGuidence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/graphikregular"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text="Travel Guidence"
+                android:textColor="#fff"
+                android:textSize="@dimen/_15sdp" />
+
+        </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cdAddNews"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cdTravellGuidence"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#8ACDC7"
-        app:cardCornerRadius="@dimen/_3sdp"
-        app:cardElevation="@dimen/_2sdp"
-        app:cardMaxElevation="@dimen/_3sdp">
-
-        <TextView
-            android:id="@+id/tvAddNews"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cdAddNews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/graphikregular"
-            android:gravity="center"
-            android:padding="@dimen/_20sdp"
-            android:text="News Feed"
-            android:textColor="#000"
-            android:textSize="@dimen/_15sdp" />
+            android:layout_below="@+id/cdTravellGuidence"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#4A2A6F"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardMaxElevation="@dimen/_3sdp">
 
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvAddNews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/graphikregular"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text="News Feed"
+                android:textColor="#fff"
+                android:textSize="@dimen/_15sdp" />
+
+        </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cdAddCovidCenters"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cdAddNews"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#8ACDC7"
-        app:cardCornerRadius="@dimen/_3sdp"
-        app:cardElevation="@dimen/_2sdp"
-        app:cardMaxElevation="@dimen/_3sdp">
-
-
-        <TextView
-            android:id="@+id/tvAddCovidInfo"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cdAddCovidCenters"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/graphikregular"
-            android:gravity="center"
-            android:padding="@dimen/_20sdp"
-            android:text="Covid Centers"
-            android:textColor="#000"
-            android:textSize="@dimen/_15sdp" />
+            android:layout_below="@+id/cdAddNews"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#4A2A6F"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardMaxElevation="@dimen/_3sdp">
 
 
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvAddCovidInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/graphikregular"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text="Covid Centers"
+                android:textColor="#fff"
+                android:textSize="@dimen/_15sdp" />
 
 
-    <androidx.cardview.widget.CardView
-        android:visibility="gone"
-        android:id="@+id/cdNotifications"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cdAddCovidINfo"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#8ACDC7"
-        app:cardCornerRadius="@dimen/_3sdp"
-        app:cardElevation="@dimen/_2sdp"
-        app:cardMaxElevation="@dimen/_3sdp">
+        </androidx.cardview.widget.CardView>
 
 
-        <TextView
-            android:id="@+id/tvNotifications"
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/cdvaccinedetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/graphikregular"
-            android:gravity="center"
-            android:padding="@dimen/_20sdp"
-            android:text="Notifications"
-            android:textColor="#000"
-            android:textSize="@dimen/_15sdp" />
+            android:layout_below="@+id/cdAddCovidCenters"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#4A2A6F"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardMaxElevation="@dimen/_3sdp">
 
 
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvvaccinedetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/graphikregular"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text="Vaccine Details"
+                android:textColor="#fff"
+                android:textSize="@dimen/_15sdp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cdNotifications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cdvaccinedetails"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#4A2A6F"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardMaxElevation="@dimen/_3sdp">
+
+
+            <TextView
+                android:id="@+id/tvnotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/graphikregular"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text="Notifications"
+                android:textColor="#fff"
+                android:textSize="@dimen/_15sdp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/cdfaqs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cdvaccinedetails"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#4A2A6F"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardMaxElevation="@dimen/_3sdp">
+
+
+            <TextView
+                android:id="@+id/tvfaqs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/graphikregular"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text="FAQs"
+                android:textColor="#fff"
+                android:textSize="@dimen/_15sdp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </LinearLayout>
 
 </LinearLayout>
