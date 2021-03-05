@@ -41,7 +41,30 @@
                 android:layout_height="@dimen/_100sdp"
                 android:scaleType="centerInside" />
 
+            <TextView
+                android:id="@+id/tvCovidDesc"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/imageView"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_13sdp"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:fontFamily="@font/graphikregular"
+                android:textColor="#000"/>
 
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/_105sdp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tvCovidDesc"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="21dp"
+                android:background="#4A2A6F"
+                android:text="Back"
+                android:textAllCaps="false"
+                android:textColor="#ffffff" />
 
 
         </RelativeLayout>
