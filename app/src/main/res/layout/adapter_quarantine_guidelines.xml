@@ -4,65 +4,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cd_vc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_2sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#34FDFBFB"
+        app:cardMaxElevation="@dimen/_6sdp">
     <RelativeLayout
         android:layout_margin="@dimen/_5ssp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#e6dae2">
-
+     >
 
         <TextView
             android:id="@+id/tvDescription"
             android:layout_marginLeft="@dimen/_6sdp"
             android:layout_marginTop="@dimen/_5ssp"
-            android:textSize="@dimen/_13sdp"
+            android:layout_weight="1"
+            android:textSize="@dimen/_12sdp"
             android:textColor="#000"
             android:fontFamily="@font/graphikmedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
-
-        <Button
-            android:id="@+id/btnEdit"
-            android:layout_width="@dimen/_100ssp"
-            android:layout_height="@dimen/_30ssp"
+        <LinearLayout
             android:layout_below="@+id/tvDescription"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_10ssp"
-            android:background="@drawable/btn_design_2"
-            android:gravity="center"
-            android:text="Edit"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="@dimen/_13ssp"
-            android:textStyle="bold" />
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
 
 
 
-        <Button
-            android:id="@+id/btnDelete"
-            android:layout_width="@dimen/_100ssp"
-            android:layout_height="@dimen/_30ssp"
-            android:layout_below="@+id/tvDescription"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_10ssp"
-            android:background="@drawable/btn_design_2"
-            android:gravity="center"
-            android:text="Delete"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="@dimen/_13ssp"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnEdit"
+                android:layout_width="@dimen/_100ssp"
+                android:layout_height="@dimen/_30ssp"
+               android:layout_weight="1"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="#4A2A6F"
+                android:gravity="center"
+                android:text="Edit"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_10ssp"
+                />
 
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="@dimen/_100ssp"
+                android:layout_height="@dimen/_30ssp"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="#4A2A6F"
+                android:gravity="center"
+                android:text="Delete"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_10ssp"
+              />
+        </LinearLayout>
 
 
     </RelativeLayout>
-
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

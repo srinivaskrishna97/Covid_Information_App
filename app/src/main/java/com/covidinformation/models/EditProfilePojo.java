@@ -16,6 +16,23 @@ public class EditProfilePojo {
     @SerializedName("phone")
     public String phone;
 
+    @SerializedName("country")
+    private String country;
+
+    @SerializedName("province")
+    private String province;
+
+
+ @SerializedName("image")
+    public String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public EditProfilePojo(String email, String name, String password, String phone) {
         this.email = email;
@@ -54,5 +71,21 @@ public class EditProfilePojo {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
     }
 }

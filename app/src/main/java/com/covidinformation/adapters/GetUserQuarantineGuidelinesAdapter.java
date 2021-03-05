@@ -33,7 +33,8 @@ public class GetUserQuarantineGuidelinesAdapter extends BaseAdapter {
     String URL = "http://covidinformation.live/covid/";
 
     public GetUserQuarantineGuidelinesAdapter(Context context, List<QGuideLinesPojo> getQGPojo1) {
-
+        /*this.context=context;
+        this.getQGPojos=getQGPojo;*/
 
         this.searchGuidens = getQGPojo1;
         this.context = context;
@@ -77,7 +78,12 @@ public class GetUserQuarantineGuidelinesAdapter extends BaseAdapter {
         getQGPojos.clear();
         if (charText.length() == 0) {
             getQGPojos.addAll(searchGuidens);
-        } else {
+        }
+        else if(charText.equals("Province"))
+        {
+            getQGPojos.addAll(searchGuidens);
+        }
+        else {
             for (QGuideLinesPojo wp : searchGuidens) {
                 if (wp.getProvince().toLowerCase(Locale.getDefault()).contains(charText)) {
                     getQGPojos.add(wp);

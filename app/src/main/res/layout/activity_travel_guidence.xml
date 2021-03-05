@@ -75,47 +75,47 @@
 
 
 
-    <!--<?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<!--<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
-        <Spinner
-            android:id="@+id/spinFrom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_40ssp"
-            android:layout_marginTop="@dimen/_15ssp"
-            android:layout_marginRight="@dimen/_40ssp"
-            android:layout_weight="1"
-            android:background="@drawable/spinner_border_black"
-            android:entries="@array/From"
-            android:paddingBottom="10dp" />
+    <Spinner
+        android:id="@+id/spinFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_40ssp"
+        android:layout_marginTop="@dimen/_15ssp"
+        android:layout_marginRight="@dimen/_40ssp"
+        android:layout_weight="1"
+        android:background="@drawable/spinner_border_black"
+        android:entries="@array/From"
+        android:paddingBottom="10dp" />
 
 
 
-        <Spinner
-            android:id="@+id/spinTo"
-            android:layout_below="@+id/spinFrom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_40ssp"
-            android:layout_marginTop="@dimen/_15ssp"
-            android:layout_marginRight="@dimen/_40ssp"
-            android:layout_weight="1"
-            android:background="@drawable/spinner_border_black"
-            android:entries="@array/To"
-            android:paddingBottom="10dp" />
+    <Spinner
+        android:id="@+id/spinTo"
+        android:layout_below="@+id/spinFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_40ssp"
+        android:layout_marginTop="@dimen/_15ssp"
+        android:layout_marginRight="@dimen/_40ssp"
+        android:layout_weight="1"
+        android:background="@drawable/spinner_border_black"
+        android:entries="@array/To"
+        android:paddingBottom="10dp" />
 
-        <ListView
-            android:id="@+id/list_view"
-            android:layout_marginTop="@dimen/_10ssp"
-            android:divider="@null"
-            android:layout_below="@+id/spinTo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-        </ListView>
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_marginTop="@dimen/_10ssp"
+        android:divider="@null"
+        android:layout_below="@+id/spinTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
 
-    </RelativeLayout>-->
+</RelativeLayout>-->

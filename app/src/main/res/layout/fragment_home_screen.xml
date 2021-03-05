@@ -1,39 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nsv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:background="#fff">
 
 
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_white">
-
+        android:background="#fff">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewGraph"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="180dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="15dp"
-            android:elevation="10dp"
-            app:cardCornerRadius="10dp">
+            android:layout_marginTop="20dp"
+            app:cardElevation="10dp"
+            android:id="@+id/cardViewGraph"
+            app:cardCornerRadius="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:weightSum="2">
-
-                <!--Pie chart to display the data-->
+                android:weightSum="2"
+                >
                 <org.eazegraph.lib.charts.PieChart
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/piechart"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -42,10 +38,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginBottom="15dp"
-
                     />
-
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -56,478 +49,816 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_15sdp"
-                        android:layout_gravity="center_vertical">
-
-                        <!--View to display the yellow color icon-->
+                        android:layout_height="15dp"
+                        android:gravity="center_vertical">
                         <View
-                            android:layout_marginTop="@dimen/_2ssp"
                             android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:background="@color/TotalCases"/>
-
-                        <!--Text view to display R -->
+                            android:layout_height="match_parent"
+                            android:background="@color/cases"/>
                         <TextView
-                            android:id="@+id/tvTotalCases"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Total Cases"
                             android:paddingLeft="10dp"/>
 
                     </LinearLayout>
-
-                    <!--Linear layout to display Python-->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_15sdp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginTop="@dimen/_10sdp">
-
-                        <!--View to display the green color icon-->
+                        android:layout_height="15dp"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="5dp">
                         <View
-                            android:layout_marginTop="@dimen/_2ssp"
                             android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:background="@color/Recovered"/>
-
-                        <!--Text view to display python text -->
+                            android:layout_height="match_parent"
+                            android:background="@color/recovered"/>
                         <TextView
-                            android:id="@+id/tvRecovered"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Recovered"
                             android:paddingLeft="10dp"/>
 
                     </LinearLayout>
-
-                    <!--Linear layout to display C++-->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_15sdp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginTop="@dimen/_10sdp">
-
-                        <!--View to display the red color icon-->
+                        android:layout_height="15dp"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="5dp">
                         <View
-                            android:layout_marginTop="@dimen/_2ssp"
                             android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:background="@color/death"/>
-
-                        <!--Text view to display C++ text -->
+                            android:layout_height="match_parent"
+                            android:background="@color/deaths"/>
                         <TextView
-                            android:id="@+id/tvDeaths"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Deaths"
                             android:paddingLeft="10dp"/>
 
                     </LinearLayout>
-
-                    <!--Linear layout to display Java-->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_15sdp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginTop="@dimen/_10sdp">
-
-                        <!--View to display the blue color icon-->
+                        android:layout_height="15dp"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="5dp">
                         <View
-                            android:layout_marginTop="@dimen/_2ssp"
                             android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:background="@color/Active"/>
-
-                        <!--Text view to display Java text -->
+                            android:layout_height="match_parent"
+                            android:background="@color/active"/>
                         <TextView
-                            android:id="@+id/tvActive"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Active"
                             android:paddingLeft="10dp"/>
 
                     </LinearLayout>
-
                 </LinearLayout>
 
             </LinearLayout>
 
+
+
         </androidx.cardview.widget.CardView>
 
 
-
         <androidx.cardview.widget.CardView
-            android:layout_below="@+id/cardViewGraph"
             android:id="@+id/covidStatistics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/cardViewGraph"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
             android:elevation="10dp"
             app:cardCornerRadius="10dp">
 
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/but1"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
                         android:orientation="vertical">
 
-                        <LinearLayout
-                            android:id="@+id/ll"
-                            android:layout_width="match_parent"
+                        <TextView
+
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="@font/graphikmedium"
+                            android:paddingLeft="40dp"
+                            android:text="Total Deaths"
+                            android:textColor="#000"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/cardView1"
-                                android:layout_weight="1"
-                                android:layout_width="match_parent"
-                                android:layout_height="100dp"
-                                app:cardCornerRadius="10dp"
-                                android:layout_marginStart="@dimen/_10sdp"
-                                android:layout_marginTop="@dimen/_10sdp"
-                                android:layout_marginEnd="@dimen/_6sdp">
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@color/TotalCases">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="16dp"
-                                        android:layout_marginTop="16dp"
-                                        android:fontFamily="@font/graphikmedium"
-                                        android:text="Total Cases"
-                                        android:textColor="#FFFFFF"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent" />
-
-                                    <TextView
-                                        android:id="@+id/tvTotal_Cases"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="16dp"
-                                        android:layout_marginBottom="16dp"
-                                        android:fontFamily="@font/graphiksemibold"
-                                        android:text="6,67,765"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="24sp"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent" />
-
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
-
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_weight="1"
-                                android:layout_width="match_parent"
-                                android:layout_height="100dp"
-                                app:cardCornerRadius="10dp"
-                                android:layout_marginStart="@dimen/_10sdp"
-                                android:layout_marginTop="@dimen/_10sdp"
-                                android:layout_marginEnd="@dimen/_6sdp">
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@color/Recovered">
-
-                                    <TextView
-                                        android:id="@+id/textView1"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="16dp"
-                                        android:layout_marginTop="16dp"
-                                        android:fontFamily="@font/graphikmedium"
-                                        android:text="Total Cases"
-                                        android:textColor="#FFFFFF"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="16dp"
-                                        android:layout_marginBottom="16dp"
-                                        android:fontFamily="@font/graphiksemibold"
-                                        android:text="6,67,765"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="24sp"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent" />
-
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
-
-
-                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/tv1"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="6dp"
+                            android:paddingLeft="40dp"
+                            android:text="490,310,12"
+                            android:textColor="#000"
+                            android:textSize="24sp" />
 
                     </LinearLayout>
 
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/but2"
                         android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_marginBottom="@dimen/_10sdp"
-                            android:layout_width="match_parent"
+                        <TextView
+
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="@font/graphikmedium"
+                            android:paddingLeft="40dp"
+                            android:text="Total Recovered"
+                            android:textColor="#000"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                            <androidx.cardview.widget.CardView
-                                android:layout_weight="1"
-                                android:layout_width="match_parent"
-                                android:layout_height="100dp"
-                                app:cardCornerRadius="10dp"
-                                android:layout_marginStart="@dimen/_10sdp"
-                                android:layout_marginTop="@dimen/_10sdp"
-                                android:layout_marginEnd="@dimen/_6sdp">
+                        <TextView
+                            android:id="@+id/tv2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="6dp"
 
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@color/death">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="16dp"
-                                        android:layout_marginTop="16dp"
-                                        android:fontFamily="@font/graphikmedium"
-                                        android:text="Total Cases"
-                                        android:textColor="#FFFFFF"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="16dp"
-                                        android:layout_marginBottom="16dp"
-                                        android:fontFamily="@font/graphiksemibold"
-                                        android:text="6,67,765"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="24sp"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent" />
-
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
-
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_weight="1"
-                                android:layout_width="match_parent"
-                                android:layout_height="100dp"
-                                app:cardCornerRadius="10dp"
-                                android:layout_marginStart="@dimen/_10sdp"
-                                android:layout_marginTop="@dimen/_10sdp"
-                                android:layout_marginEnd="@dimen/_6sdp">
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@color/Active">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="16dp"
-                                        android:layout_marginTop="16dp"
-                                        android:fontFamily="@font/graphikmedium"
-                                        android:text="Total Cases"
-                                        android:textColor="#FFFFFF"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="16dp"
-                                        android:layout_marginBottom="16dp"
-                                        android:fontFamily="@font/graphiksemibold"
-                                        android:text="6,67,765"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="24sp"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent" />
-
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
-
-
-                        </LinearLayout>
-
+                            android:paddingLeft="40dp"
+                            android:text="490,310,12"
+                            android:textColor="#000"
+                            android:textSize="24sp" />
                     </LinearLayout>
 
 
-                </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="match_parent"
+                        android:background="@drawable/but3"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="@font/graphikmedium"
+                            android:paddingLeft="40dp"
+                            android:text="Total Active"
+                            android:textColor="#000"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv3"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="6dp"
+
+                            android:paddingLeft="40dp"
+                            android:text="490,310,12"
+                            android:textColor="#000"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+
 
             </LinearLayout>
 
 
+        </androidx.cardview.widget.CardView>
+
+       <androidx.cardview.widget.CardView
+             android:id="@+id/track"
+             android:layout_width="match_parent"
+             android:layout_height="fill_parent"
+             android:layout_below="@+id/covidStatistics"
+
+             android:layout_marginLeft="20dp"
+             android:layout_marginRight="20dp"
+             android:layout_marginTop="20dp"
+             app:cardElevation="10dp"
+             app:cardCornerRadius="5dp"
+             >
+
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:visibility="gone"
+                 android:layout_height="370dp">
+
+                 <com.leo.simplearcloader.SimpleArcLoader
+                     android:id="@+id/loader"
+                     android:layout_width="60dp"
+                     android:layout_height="60dp"
+                     android:layout_centerInParent="true"
+                     android:visibility="gone"
+                     app:arc_style="simple_arc"></com.leo.simplearcloader.SimpleArcLoader>
+
+                 <ScrollView
+                     android:id="@+id/scrollStats"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:visibility="visible">
+
+                   <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:visibility="gone"
+                         android:orientation="vertical">
+
+                         <TextView
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="25dp"
+                             android:layout_marginTop="20dp"
+                             android:text="global stats"
+                             android:textAllCaps="true"
+                             android:textSize="28sp"
+                             android:textStyle="bold" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="1dp"
+                             android:layout_marginLeft="20dp"
+                             android:layout_marginTop="5dp"
+                             android:layout_marginRight="20dp"
+                             android:background="@color/color_two" />
+
+                         <RelativeLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="25dp"
+                             android:layout_marginTop="10dp"
+                             android:layout_marginRight="25dp"
+                             android:layout_marginBottom="10dp">
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="Cases"
+                                 android:textSize="18sp" />
+
+                             <TextView
+                                 android:id="@+id/tvCases"
+                                 android:layout_width="fill_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignParentRight="true"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="0"
+
+                                 android:textAlignment="textEnd"
+                                 android:textColor="@color/color_one"
+                                 android:textSize="18sp"
+                                 android:textStyle="bold" />
+
+                         </RelativeLayout>
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="1dp"
+                             android:layout_marginLeft="20dp"
+                             android:layout_marginRight="20dp"
+                             android:background="@color/color_two" />
+
+                         <RelativeLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="25dp"
+                             android:layout_marginTop="10dp"
+                             android:layout_marginRight="25dp"
+                             android:layout_marginBottom="10dp">
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="Recovored"
+                                 android:textSize="18sp" />
+
+                             <TextView
+                                 android:id="@+id/tvRecovered"
+                                 android:layout_width="fill_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignParentRight="true"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="0"
+                                 android:textAlignment="textEnd"
+                                 android:textColor="@color/color_one"
+                                 android:textSize="18sp"
+                                 android:textStyle="bold" />
+
+                         </RelativeLayout>
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="1dp"
+                             android:layout_marginLeft="20dp"
+                             android:layout_marginRight="20dp"
+                             android:background="@color/color_two" />
+
+                         <RelativeLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="25dp"
+                             android:layout_marginTop="10dp"
+                             android:layout_marginRight="25dp"
+                             android:layout_marginBottom="10dp">
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="Critical"
+                                 android:textSize="18sp" />
+
+                             <TextView
+                                 android:id="@+id/tvCritical"
+                                 android:layout_width="fill_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignParentRight="true"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="0"
+
+                                 android:textAlignment="textEnd"
+                                 android:textColor="@color/color_one"
+                                 android:textSize="18sp"
+                                 android:textStyle="bold" />
+
+                         </RelativeLayout>
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="1dp"
+                             android:layout_marginLeft="20dp"
+                             android:layout_marginRight="20dp"
+                             android:background="@color/color_two" />
+
+                         <RelativeLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="25dp"
+                             android:layout_marginTop="10dp"
+                             android:layout_marginRight="25dp"
+                             android:layout_marginBottom="10dp">
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="Active"
+                                 android:textSize="18sp" />
+
+                             <TextView
+                                 android:id="@+id/tvActive"
+                                 android:layout_width="fill_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignParentRight="true"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="0"
+
+                                 android:textAlignment="textEnd"
+                                 android:textColor="@color/color_one"
+                                 android:textSize="18sp"
+                                 android:textStyle="bold" />
+
+                         </RelativeLayout>
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="1dp"
+                             android:layout_marginLeft="20dp"
+                             android:layout_marginRight="20dp"
+                             android:background="@color/color_two" />
+
+                         <RelativeLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="25dp"
+                             android:layout_marginTop="10dp"
+                             android:layout_marginRight="25dp"
+                             android:layout_marginBottom="10dp">
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="Today Cases"
+                                 android:textSize="18sp" />
+
+                             <TextView
+                                 android:id="@+id/tvTodayCases"
+                                 android:layout_width="fill_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignParentRight="true"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="0"
+
+                                 android:textAlignment="textEnd"
+                                 android:textColor="@color/color_one"
+                                 android:textSize="18sp"
+                                 android:textStyle="bold" />
+
+                         </RelativeLayout>
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="1dp"
+                             android:layout_marginLeft="20dp"
+                             android:layout_marginRight="20dp"
+                             android:background="@color/color_two" />
+
+                         <RelativeLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="25dp"
+                             android:layout_marginTop="10dp"
+                             android:layout_marginRight="25dp"
+                             android:layout_marginBottom="10dp">
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="Total Deaths"
+                                 android:textSize="18sp" />
+
+                             <TextView
+                                 android:id="@+id/tvTotalDeaths"
+                                 android:layout_width="fill_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignParentRight="true"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="0"
+
+                                 android:textAlignment="textEnd"
+                                 android:textColor="@color/color_one"
+                                 android:textSize="18sp"
+                                 android:textStyle="bold" />
+
+                         </RelativeLayout>
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="1dp"
+                             android:layout_marginLeft="20dp"
+                             android:layout_marginRight="20dp"
+                             android:background="@color/color_two" />
+
+                         <RelativeLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="25dp"
+                             android:layout_marginTop="10dp"
+                             android:layout_marginRight="25dp"
+                             android:layout_marginBottom="10dp">
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="Today Deaths"
+                                 android:textSize="18sp" />
+
+                             <TextView
+                                 android:id="@+id/tvTodayDeaths"
+                                 android:layout_width="fill_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignParentRight="true"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="0"
+
+                                 android:textAlignment="textEnd"
+                                 android:textColor="@color/color_one"
+                                 android:textSize="18sp"
+                                 android:textStyle="bold" />
+
+                         </RelativeLayout>
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="1dp"
+                             android:layout_marginLeft="20dp"
+                             android:layout_marginRight="20dp"
+                             android:background="@color/color_two" />
+
+                         <RelativeLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="25dp"
+                             android:layout_marginTop="10dp"
+                             android:layout_marginRight="25dp"
+                             android:layout_marginBottom="10dp">
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="Affected Countries"
+                                 android:textSize="18sp" />
+
+                             <TextView
+                                 android:id="@+id/tvAffectedCountries"
+                                 android:layout_width="fill_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignParentRight="true"
+                                 android:fontFamily="sans-serif-light"
+                                 android:text="0"
+                                 android:textAlignment="textEnd"
+                                 android:textColor="@color/color_one"
+                                 android:textSize="18sp"
+                                 android:textStyle="bold" />
+
+                         </RelativeLayout>
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="1dp"
+                             android:layout_marginLeft="20dp"
+                             android:layout_marginRight="20dp"
+                             android:background="@color/color_two" />
+
+                     </LinearLayout>
+
+                </ScrollView>
+
+            </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
-            android:layout_marginTop="@dimen/_13sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_below="@+id/covidStatistics"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/track"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cdQuarentineGuidelines"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="5dp"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_6sdp">
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#ad2c57">
+                    android:background="@drawable/mybutton"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_10sdp"
-                        android:textSize="@dimen/_10sdp"
                         android:fontFamily="@font/graphikmedium"
+                        android:padding="@dimen/_10sdp"
                         android:text="Quarantine Guidelines"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/_10sdp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-
 
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cdTravellGuidence"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="5dp"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_6sdp">
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#c3315c">
+                    android:background="@drawable/mybutton"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_10sdp"
-                        android:textSize="@dimen/_10sdp"
                         android:fontFamily="@font/graphikmedium"
-                        android:text="Travell Guidelines"
-                        android:textColor="#FFFFFF" />
+                        android:padding="@dimen/_10sdp"
+                        android:text="Travel Guidelines"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/_10sdp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-
-
 
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cdSafetyMeasures"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="5dp"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_6sdp">
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#ec407a">
+                    android:background="@drawable/mybutton"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_10sdp"
-                        android:textSize="@dimen/_10sdp"
                         android:fontFamily="@font/graphikmedium"
+                        android:padding="@dimen/_10sdp"
                         android:text="Safety Measures"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/_10sdp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-
-
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cdFAQs"
-                android:layout_weight="1"
+                android:id="@+id/cdSelfAssement"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="5dp"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_6sdp">
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#f18fb1">
+                    android:background="@drawable/mybutton"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_10sdp"
-                        android:textSize="@dimen/_10sdp"
                         android:fontFamily="@font/graphikmedium"
-                        android:text="FAQs"
-                        android:textColor="#FFFFFF" />
+                        android:padding="@dimen/_10sdp"
+                        android:text="Self Assessment"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/_10sdp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cdVaccineDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/mybutton"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/graphikmedium"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Vaccine Details"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/_10sdp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cdNewsFeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/mybutton"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/graphikmedium"
+                        android:padding="@dimen/_10sdp"
+                        android:text="News Feed"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/_10sdp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cdNotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/mybutton"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/graphikmedium"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Notifications"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/_10sdp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cdFAQs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/mybutton"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/graphikmedium"
+                        android:padding="@dimen/_10sdp"
+                        android:text="FAQs"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/_10sdp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
 
 
         </LinearLayout>

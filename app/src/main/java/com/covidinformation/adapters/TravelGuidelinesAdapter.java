@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.covidinformation.R;
@@ -41,6 +42,11 @@ public class TravelGuidelinesAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater obj1 = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View obj2 = obj1.inflate(R.layout.adapter_travel_guidence, null);
+
+
+        Button btngetcountry=(Button)obj2.findViewById(R.id.btngetcountry);
+        btngetcountry.setText(getQGPojos.get(position).getProvince());
+
 
         TextView tvGuidence=(TextView)obj2.findViewById(R.id.tvGuidence);
         tvGuidence.setText(getQGPojos.get(position).getDescription());

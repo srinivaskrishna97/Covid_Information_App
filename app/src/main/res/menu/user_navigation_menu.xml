@@ -3,31 +3,34 @@
 
 
 
-    <item android:id="@+id/item1"
-        android:icon="@drawable/ic_baseline_ac_unit_24"
-        android:title="News"/>
-
-    <item android:id="@+id/item2"
-        android:icon="@drawable/ic_baseline_settings_input_antenna_24"
-        android:title="Centers"/>
-
-    <item android:id="@+id/home"
-        android:icon="@drawable/ic_baseline_home_24"
-
-        android:title="Home"/>
-
-
-    <item android:id="@+id/map"
-        android:icon="@drawable/map_icon"
-
-        android:title="Map"/>
 
 
 
 
-    <item android:id="@+id/myprofile"
-        android:icon="@drawable/ic_baseline_person_pin_24"
 
-        android:title="My Profile"/>
+    <item
+        android:id="@+id/map"
+        android:icon="@drawable/iconl"
+        android:title="Maps" />
+
+
+    <item
+        android:id="@+id/item2"
+        android:icon="@drawable/icon_blue"
+        android:title="Centers" />
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home_icon"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/item1"
+        android:icon="@drawable/news_blue"
+        android:title="News" />
+
+    <item
+        android:id="@+id/myprofile"
+        android:icon="@drawable/profile_blue"
+        android:title="My Profile" />
 
 </menu>

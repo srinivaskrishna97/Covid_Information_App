@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/admin_side_inner_page"
     tools:context=".activities.AddNewsActivity">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -108,7 +109,8 @@
         android:layout_gravity="center"
         android:textColor="#ffffff"
         android:text="Submit"
-        android:background="@drawable/button_design"
+        android:background="#4A2A6F"
+
         android:layout_marginTop="@dimen/_30sdp"
         android:layout_marginLeft="@dimen/_50sdp"
         android:layout_marginRight="@dimen/_50sdp"

@@ -1,5 +1,6 @@
 package com.covidinformation.adapters;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 import com.covidinformation.R;
 import com.covidinformation.activities.AddTravellGuidelinesActivity;
 import com.covidinformation.activities.CovidCentersInfoActivity;
+import com.covidinformation.activities.EditNewsActivity;
+import com.covidinformation.activities.EditTravellActivity;
 import com.covidinformation.api.ApiService;
 import com.covidinformation.api.RetroClient;
 import com.covidinformation.models.GetQGPojo;
@@ -63,6 +66,13 @@ public class GetTravelGuidelinesAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
 
+                Intent intent=new Intent(context, EditTravellActivity.class);
+                intent.putExtra("tid",getQGPojos.get(position).getTid());
+                intent.putExtra("provience",getQGPojos.get(position).getProvince());
+                intent.putExtra("country",getQGPojos.get(position).getCountry());
+                intent.putExtra("desc",getQGPojos.get(position).getDescription());
+                context.startActivity(intent);
+
             }
         });
 
@@ -72,20 +82,20 @@ public class GetTravelGuidelinesAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
 
-                deleteTravellGuidelines(getQGPojos.get(position).getQid());
+                deleteTravellGuidelines(getQGPojos.get(position).getTid());
             }
         });
 
         return obj2;
     }
     ProgressDialog progressDialog;
-    public void deleteTravellGuidelines(String CenterId){
+    public void deleteTravellGuidelines(String ID){
         progressDialog = new ProgressDialog(context);
         progressDialog.setMessage("Loading....");
         progressDialog.show();
 
         ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
-        Call<ResponseData> call = service.deletetravel(CenterId);
+        Call<ResponseData> call = service.deletetravel(ID);
         call.enqueue(new Callback<ResponseData>() {
             @Override
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
@@ -95,6 +105,7 @@ public class GetTravelGuidelinesAdapter extends BaseAdapter {
                 }else {
                     Intent intent=new Intent(context, AddTravellGuidelinesActivity.class);
                     context.startActivity(intent);
+                    ((Activity)context).finish();
                     Toast.makeText(context," Center Deleted successfully",Toast.LENGTH_SHORT).show();
                 }
             }

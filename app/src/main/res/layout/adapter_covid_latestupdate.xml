@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:cardBackgroundColor="#fff"
+        app:cardBackgroundColor="#34FDFBFB"
         app:cardCornerRadius="@dimen/_8sdp"
         app:cardElevation="@dimen/_2sdp"
         app:cardMaxElevation="@dimen/_6sdp">
@@ -18,6 +18,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/_6sdp">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/cloc"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"/>
 
             <TextView
                 android:id="@+id/tvName"
@@ -38,7 +45,7 @@
                 android:layout_marginLeft="@dimen/_13sdp"
                 android:fontFamily="@font/graphikregular"
                 android:textColor="#000"
-                android:textSize="@dimen/_13ssp" />
+                android:textSize="@dimen/_12ssp" />
 
 
             <TextView
@@ -49,7 +56,7 @@
                 android:layout_marginLeft="@dimen/_13sdp"
                 android:fontFamily="@font/graphikregular"
                 android:textColor="#000"
-                android:textSize="@dimen/_13ssp" />
+                android:textSize="@dimen/_12ssp" />
 
 
             <TextView
@@ -60,8 +67,29 @@
                 android:layout_marginLeft="@dimen/_13sdp"
                 android:fontFamily="@font/graphikregular"
                 android:textColor="#000"
-                android:textSize="@dimen/_13ssp" />
+                android:textSize="@dimen/_12ssp" />
 
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:id="@+id/call"
+                android:layout_marginLeft="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/ic_call"
+                android:layout_below="@+id/tvAdddresstwo"
+                />
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:id="@+id/location"
+                android:layout_marginLeft="70dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/ic_loc"
+                android:layout_below="@+id/tvAdddresstwo"
+
+                />
 
             <TextView
                 android:id="@+id/tvPhone"
@@ -69,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvAdddresstwo"
                 android:layout_marginLeft="@dimen/_13sdp"
+                android:visibility="gone"
                 android:fontFamily="@font/graphikregular"
                 android:textColor="#000"
                 android:textSize="@dimen/_13ssp" />
@@ -76,6 +105,7 @@
 
             <TextView
                 android:id="@+id/tvLat"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvPhone"
@@ -86,6 +116,7 @@
 
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/tvLang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -96,14 +127,21 @@
                 android:textSize="@dimen/_13ssp" />
 
 
+            <LinearLayout
+                android:layout_below="@+id/call"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
             <Button
                 android:id="@+id/btnEdit"
                 android:layout_width="@dimen/_105sdp"
+                android:layout_weight="1"
                 android:layout_height="40dp"
                 android:layout_below="@+id/tvLang"
-                android:layout_marginLeft="@dimen/_5ssp"
+
                 android:layout_marginTop="@dimen/_8ssp"
-                android:background="@drawable/button_design"
+                android:background="#4A2A6F"
                 android:text="Edit"
                 android:textAllCaps="false"
                 android:textColor="#ffffff" />
@@ -113,15 +151,16 @@
                 android:id="@+id/btnDelete"
                 android:layout_width="@dimen/_105sdp"
                 android:layout_height="40dp"
+                android:layout_weight="1"
                 android:layout_below="@+id/tvLang"
                 android:layout_alignParentRight="true"
-                android:layout_marginLeft="@dimen/_5ssp"
+
                 android:layout_marginTop="@dimen/_8ssp"
-                android:background="@drawable/button_design"
+                android:background="#4A2A6F"
                 android:text="Delete"
                 android:textAllCaps="false"
                 android:textColor="#ffffff" />
-
+            </LinearLayout>
 
         </RelativeLayout>
 

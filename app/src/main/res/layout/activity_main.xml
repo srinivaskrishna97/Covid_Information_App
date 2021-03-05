@@ -61,3 +61,56 @@
 
 
 
+   <!-- <androidx.cardview.widget.CardView
+        android:id="@+id/cdUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#8BC34A"
+        app:cardCornerRadius="@dimen/_3sdp"
+        app:cardElevation="@dimen/_2sdp"
+        app:cardMaxElevation="@dimen/_3sdp">
+
+        <TextView
+            android:id="@+id/tvUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:fontFamily="@font/graphikregular"
+            android:padding="@dimen/_20sdp"
+            android:text="UserLogin"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="@dimen/_15sdp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/adAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cdUser"
+        android:layout_margin="10dp"
+
+        app:cardBackgroundColor="#8BC34A"
+        app:cardCornerRadius="@dimen/_3sdp"
+        app:cardElevation="@dimen/_2sdp"
+        app:cardMaxElevation="@dimen/_3sdp">
+
+
+        <TextView
+            android:id="@+id/tvAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/_20sdp"
+            android:fontFamily="@font/graphikregular"
+            android:text="Admin Login"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="@dimen/_15sdp" />
+
+
+    </androidx.cardview.widget.CardView>-->
+

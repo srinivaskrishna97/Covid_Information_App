@@ -1,25 +1,96 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/admin_side_inner_page"
 
-    <RelativeLayout tools:context=".activities.AddQuarantineGuidelinesActivity" android:background="@drawable/admin_side_inner_page" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    tools:context=".activities.AddQuarantineGuidelinesActivity">
+
+    <LinearLayout
+        android:id="@+id/dg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="100dp"
+            android:background="@drawable/mybutton2"
+            android:text="Quarantine Guidelines"
+            android:textColor="#fff"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_83sdp"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/spinSelectCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_border_black"
+            android:entries="@array/country"
+            android:paddingBottom="10dp" />
 
 
-    -<LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="vertical" android:layout_marginTop="20dp" android:id="@+id/dg">
+        <Spinner
+            android:id="@+id/spinSelectProvince"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_border_black"
+            android:entries="@array/province"
+            android:paddingBottom="10dp" />
 
-    <Button android:background="@drawable/mybutton2" android:layout_height="wrap_content" android:layout_width="match_parent" android:textSize="14dp" android:textColor="#fff" android:text="Quarantine Guidelines" android:layout_marginRight="100dp"/>
-
-</LinearLayout>
+    </LinearLayout>
 
 
-    -<LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="horizontal" android:layout_marginTop="@dimen/_83sdp" android:id="@+id/ll">
+    <EditText
+        android:id="@+id/etDescription"
+        style="@style/modifiedEditText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:hint="Description"
+        android:paddingBottom="10dp"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        android:textSize="@dimen/_14sdp" />
 
-    <Spinner android:background="@drawable/spinner_border_black" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="@dimen/_3sdp" android:id="@+id/spinSelectCountry" android:layout_marginRight="@dimen/_10sdp" android:paddingBottom="10dp" android:entries="@array/country" android:layout_weight="1" android:layout_marginLeft="@dimen/_10sdp"/>
 
-    <Spinner android:background="@drawable/spinner_border_black" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="@dimen/_3sdp" android:id="@+id/spinSelectProvince" android:layout_marginRight="@dimen/_10sdp" android:paddingBottom="10dp" android:entries="@array/province" android:layout_weight="1" android:layout_marginLeft="@dimen/_10sdp"/>
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_below="@+id/etDescription"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="#4A2A6F"
+        android:gravity="center"
+        android:text="Update"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_12sdp" />
 
-</LinearLayout>
-
-    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="@dimen/_15sdp" android:id="@+id/etDescription" android:textSize="@dimen/_14sdp" android:textColor="#000" android:layout_marginRight="@dimen/_10sdp" android:paddingBottom="10dp" android:layout_marginLeft="@dimen/_10sdp" android:textColorHint="#000" android:hint="Description" android:layout_below="@+id/ll" style="@style/modifiedEditText1"/>
-
-    <Button android:background="#4A2A6F" android:layout_height="@dimen/_28sdp" android:layout_width="@dimen/_110sdp" android:layout_marginTop="@dimen/_5sdp" android:id="@+id/btnAdd" android:textSize="@dimen/_12sdp" android:textColor="#FFFFFF" android:text="Update" android:layout_marginRight="@dimen/_10sdp" android:layout_marginLeft="@dimen/_10sdp" android:layout_below="@+id/etDescription" android:textAllCaps="false" android:gravity="center" android:layout_alignParentRight="true"/>
 
 </RelativeLayout>

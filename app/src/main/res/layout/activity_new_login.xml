@@ -1,31 +1,103 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    style="@style/linearParent"
+    android:layout_gravity="center"
+    android:background="@drawable/background"
+    android:padding="@dimen/loginViewsMargin"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:gravity="center" android:padding="@dimen/loginViewsMargin" android:background="@drawable/background" android:layout_gravity="center" style="@style/linearParent">
+    <TextView
+        style="@style/headerTextPrimary"
+        android:layout_marginTop="@dimen/loginViewsMargin"
+        android:text="Login" />
 
-    <TextView style="@style/headerTextPrimary" android:text="Login" android:layout_marginTop="@dimen/loginViewsMargin"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputEmail"
+        style="@style/parent"
+        android:textColorHint="#FFFFFF"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            style="@style/modifiedEditText"
+            android:textColor="#FFFFFF"
+            android:hint="@string/login_email_hint"
+            android:inputType="textEmailAddress"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputPassword"
+        style="@style/parent"
+        android:textColorHint="#FFFFFF"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            style="@style/modifiedEditText"
+            android:textColor="#FFFFFF"
+            android:hint="@string/login_password_hint"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-    -<com.google.android.material.textfield.TextInputLayout style="@style/parent" android:layout_marginTop="@dimen/loginViewsMargin" android:textColorHint="#FFFFFF" android:id="@+id/textInputEmail">
+    <Spinner
+        android:id="@+id/spinRole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:entries="@array/role"
+        android:background="@drawable/spinner_bottom_border"
+        android:paddingBottom="10dp" />
 
-    <EditText style="@style/modifiedEditText" android:id="@+id/editTextEmail" android:maxLines="1" android:inputType="textEmailAddress" android:hint="@string/login_email_hint" android:textColor="#FFFFFF"/>
+    <TextView
+        android:id="@+id/tvForgetPassword"
+        style="@style/viewParent"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:text="Forgot Password?"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/newsMoreTextSize" />
 
-</com.google.android.material.textfield.TextInputLayout>
+    <CheckBox
+        android:background="#fff"
+        android:id="@+id/chRememberMe"
+        android:text="@string/RememberMe"
+        android:textColor="#000"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
+    <Button
+        android:id="@+id/cirLoginButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/button_design"
+        android:gravity="center"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="#000"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold" />
 
-    -<com.google.android.material.textfield.TextInputLayout style="@style/parent" android:layout_marginTop="@dimen/loginViewsMargin" android:textColorHint="#FFFFFF" android:id="@+id/textInputPassword">
+    <TextView
+        android:id="@+id/tv_signup"
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin"
+        android:gravity="center_horizontal"
+        android:onClick="viewRegisterClicked"
+        android:text="@string/login_signup_hint"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
-    <EditText style="@style/modifiedEditText" android:id="@+id/editTextPassword" android:maxLines="1" android:inputType="textPassword" android:hint="@string/login_password_hint" android:textColor="#FFFFFF"/>
-
-</com.google.android.material.textfield.TextInputLayout>
-
-    <Spinner android:background="@drawable/spinner_bottom_border" android:layout_marginTop="@dimen/_12sdp" android:id="@+id/spinRole" android:paddingBottom="10dp" android:entries="@array/role" android:layout_marginLeft="@dimen/_5sdp" android:layout_marginRight="@dimen/_5sdp" android:layout_height="wrap_content" android:layout_width="match_parent"/>
-
-    <TextView android:layout_gravity="end" style="@style/viewParent" android:text="Forgot Password?" android:layout_marginTop="@dimen/_12sdp" android:id="@+id/tvForgetPassword" android:textColor="#FFFFFF" android:textSize="@dimen/newsMoreTextSize"/>
-
-    <CheckBox android:padding="10dp" android:background="#fff" android:text="@string/RememberMe" android:id="@+id/chRememberMe" android:textColor="#000" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_margin="10dp"/>
-
-    <Button android:gravity="center" android:background="@drawable/button_design" android:text="Login" android:layout_marginTop="@dimen/_18sdp" android:id="@+id/cirLoginButton" android:textColor="#000" android:layout_marginLeft="@dimen/_10sdp" android:layout_marginRight="@dimen/_10sdp" android:layout_height="@dimen/_38sdp" android:layout_width="match_parent" android:textSize="@dimen/_15sdp" android:textStyle="bold" android:textAllCaps="false"/>
-
-    <TextView android:gravity="center_horizontal" style="@style/parent" android:text="@string/login_signup_hint" android:layout_marginTop="@dimen/loginViewsMargin" android:id="@+id/tv_signup" android:textColor="#FFFFFF" android:textStyle="bold" android:textAlignment="center" android:onClick="viewRegisterClicked"/>
 
 </LinearLayout>

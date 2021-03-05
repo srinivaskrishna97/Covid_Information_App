@@ -19,6 +19,13 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/_6sdp">
 
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/cloc"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"/>
+
             <TextView
                 android:id="@+id/tvName"
                 android:layout_width="wrap_content"
@@ -41,11 +48,24 @@
                 android:textSize="@dimen/_13ssp" />
 
 
+
+            <TextView
+                android:id="@+id/tvadd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvLocation"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:fontFamily="@font/graphikregular"
+                android:textColor="#000"
+                android:text="Address"
+                android:textSize="@dimen/_13ssp" />
+
+
             <TextView
                 android:id="@+id/tvAdddressone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvLocation"
+                android:layout_below="@+id/tvadd"
                 android:layout_marginLeft="@dimen/_13sdp"
                 android:fontFamily="@font/graphikregular"
                 android:textColor="#000"
@@ -63,10 +83,30 @@
                 android:textSize="@dimen/_13ssp" />
 
 
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:id="@+id/call"
+                android:layout_marginLeft="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/ic_call"
+                android:layout_below="@+id/tvAdddresstwo"
+                />
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:id="@+id/location"
+                android:layout_marginLeft="70dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/ic_loc"
+                android:layout_below="@+id/tvAdddresstwo"/>
+
             <TextView
                 android:id="@+id/tvPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:layout_below="@+id/tvAdddresstwo"
                 android:layout_marginLeft="@dimen/_13sdp"
                 android:fontFamily="@font/graphikregular"
@@ -80,6 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvPhone"
                 android:layout_marginLeft="@dimen/_13sdp"
+                android:visibility="gone"
                 android:fontFamily="@font/graphikregular"
                 android:textColor="#000"
                 android:textSize="@dimen/_13ssp" />
@@ -91,6 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvLat"
                 android:layout_marginLeft="@dimen/_13sdp"
+                android:visibility="gone"
                 android:fontFamily="@font/graphikregular"
                 android:textColor="#000"
                 android:textSize="@dimen/_13ssp" />

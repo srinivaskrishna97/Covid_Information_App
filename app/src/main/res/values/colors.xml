@@ -29,6 +29,10 @@
 
 
 
+    <color name="cases">#8A56AC</color>
+    <color name="recovered">#FFCDD2</color>
+    <color name="deaths">#B2DFDB</color>
+    <color name="active">#D47FA6</color>
 
 
 </resources>

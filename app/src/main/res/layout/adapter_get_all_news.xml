@@ -42,6 +42,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1.5"
                     android:maxLines="2"
+                    android:ellipsize="end"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_13sdp"
                     android:layout_marginTop="@dimen/_2sdp"
@@ -68,7 +69,7 @@
                 android:layout_below="@+id/ll"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:textAllCaps="false"
-                android:background="@drawable/button_design"
+                android:background="#4A2A6F"
                 android:layout_width="@dimen/_105sdp"
                 android:layout_height="40dp" />
 

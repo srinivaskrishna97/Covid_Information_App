@@ -61,7 +61,10 @@
 
 
     </LinearLayout>
-
+<ImageView
+    android:id="@+id/iv"
+    android:layout_width="@dimen/_100sdp"
+    android:layout_height="@dimen/_100sdp"/>
     <Button
         android:id="@+id/btnSubmit"
         android:layout_gravity="center"

@@ -91,13 +91,13 @@ public class HomeScreenFragment extends Fragment {
         tv1 = view.findViewById(R.id.tv1);
         tv2 = view.findViewById(R.id.tv2);
         tv3 = view.findViewById(R.id.tv3);
-        //  tvtr= view.findViewById(R.id.tvtr);
+      //  tvtr= view.findViewById(R.id.tvtr);
         pieChart = view.findViewById(R.id.piechart);
 
 
         simpleArcLoader = view.findViewById(R.id.loader);
         scrollView = view.findViewById(R.id.scrollStats);
-        //  setData();
+      //  setData();
         userSafetyGuidence();
         fetchData();
         return view;
@@ -146,7 +146,7 @@ public class HomeScreenFragment extends Fragment {
 
                             simpleArcLoader.stop();
                             simpleArcLoader.setVisibility(View.GONE);
-                            //    scrollView.setVisibility(View.VISIBLE);
+                        //    scrollView.setVisibility(View.VISIBLE);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -266,7 +266,7 @@ public class HomeScreenFragment extends Fragment {
                 return true;
 
 
-            case R.id.menu_vaccine:
+                case R.id.menu_vaccine:
                 Intent vaccine = new Intent(getContext(), GetVaccineDetailsActivity.class);
                 startActivity(vaccine);
                 return true;

@@ -12,7 +12,7 @@
         app:cardElevation="@dimen/_2sdp"
         app:cardCornerRadius="@dimen/_8sdp"
         android:layout_margin="10dp"
-        app:cardBackgroundColor="#fff"
+        app:cardBackgroundColor="#34FDFBFB"
         app:cardMaxElevation="@dimen/_6sdp">
 
         <RelativeLayout
@@ -62,29 +62,37 @@
 
 
 
+            <LinearLayout
+                android:layout_below="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
 
 
             <Button
                 android:id="@+id/btnEdit"
                 android:text="Edit"
+                android:background="#4A2A6F"
                 android:textColor="#ffffff"
+                android:layout_weight="1"
                 android:layout_below="@+id/ll"
                 android:textAllCaps="false"
-                android:background="@drawable/button_design"
                 android:layout_width="@dimen/_105sdp"
                 android:layout_height="40dp" />
             <Button
                 android:id="@+id/btnDelete"
                 android:layout_alignParentRight="true"
                 android:text="Delete"
+                android:layout_weight="1"
+                android:background="#4A2A6F"
                 android:textColor="#ffffff"
                 android:layout_below="@+id/ll"
                 android:textAllCaps="false"
-                android:background="@drawable/button_design"
                 android:layout_width="@dimen/_105sdp"
                 android:layout_height="40dp" />
 
-
+            </LinearLayout>
 
 
 

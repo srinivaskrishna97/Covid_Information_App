@@ -1,6 +1,5 @@
 package com.covidinformation.adapters;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;

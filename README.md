@@ -330,3 +330,4 @@ This mobile application is mainly used by people facing difficulties in finding 
 ![Admin](http://covidinformation.live/Diagrams/Screens/logout_screen.svg)
 ![Admin](http://covidinformation.live/Diagrams/Screens/User_profile.svg)
 ![Admin](http://covidinformation.live/Diagrams/Screens/Vaccine_details.svg)
+

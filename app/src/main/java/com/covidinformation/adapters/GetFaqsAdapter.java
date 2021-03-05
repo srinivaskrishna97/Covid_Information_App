@@ -58,19 +58,24 @@ public class GetFaqsAdapter extends BaseAdapter {
 
 
         ImageView imageView=(ImageView) obj2.findViewById(R.id.imageView);
+        ImageView imageView1=(ImageView) obj2.findViewById(R.id.imageView1);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 tvans.setVisibility(View.VISIBLE);
-//                if()
-//                {
-//
-//                }
-//                else {
-//
-//                }
+                imageView1.setVisibility(View.VISIBLE);
+                imageView.setVisibility(View.GONE);
+            }
+        });
 
+
+        imageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tvans.setVisibility(View.GONE);
+                imageView1.setVisibility(View.GONE);
+                imageView.setVisibility(View.VISIBLE);
             }
         });
 

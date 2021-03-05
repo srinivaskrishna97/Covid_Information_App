@@ -1,35 +1,132 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_5ssp"
 
-
-    -<RelativeLayout android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="horizontal" android:layout_margin="@dimen/_5ssp">
-
-
-    -<androidx.cardview.widget.CardView android:layout_height="wrap_content" android:layout_width="match_parent" app:cardMaxElevation="@dimen/_6sdp" app:cardBackgroundColor="#fff" android:layout_marginRight="20dp" android:layout_marginLeft="20dp" android:layout_marginTop="5dp" app:cardElevation="@dimen/_2sdp" android:id="@+id/cd_search_ride">
-
-
-    -<RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:padding="@dimen/_6sdp">
-
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginLeft="@dimen/_6sdp" android:layout_marginTop="@dimen/_1ssp" android:id="@+id/tvTitle" android:textSize="@dimen/_14sdp" android:textColor="#000" android:fontFamily="@font/graphikmedium" android:visibility="gone"/>
-
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginRight="20dp" android:layout_marginLeft="@dimen/_6sdp" android:layout_marginTop="@dimen/_1ssp" android:id="@+id/tvDate" android:textSize="@dimen/_10sdp" android:textColor="#000" android:fontFamily="@font/graphikmedium" android:layout_weight="1" android:layout_alignParentRight="true"/>
+        android:orientation="horizontal">
 
 
-    -<LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="horizontal" android:id="@+id/ll" android:layout_below="@+id/tvTitle">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cd_search_ride"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/_2sdp"
 
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginLeft="@dimen/_6sdp" android:layout_marginTop="@dimen/_1ssp" android:id="@+id/tvDescription" android:textSize="@dimen/_12sdp" android:textColor="#000" android:fontFamily="@font/graphikmedium" android:layout_weight="1" android:layout_below="@+id/tvTitle" android:ellipsize="end" android:maxLines="4"/>
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:cardBackgroundColor="#fff"
+            app:cardMaxElevation="@dimen/_6sdp">
 
-    <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/imageView" android:layout_below="@+id/tvTitle" android:text="Aligned right" android:gravity="end" android:scaleType="centerInside" android:src="@drawable/ic_downarrow"/>
+            <RelativeLayout
+                android:padding="@dimen/_6sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-</LinearLayout>
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_1ssp"
+                    android:fontFamily="@font/graphikmedium"
+                    android:textColor="#000"
+                    android:textSize="@dimen/_14sdp" />
 
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginRight="20dp" android:layout_marginLeft="@dimen/_6sdp" android:layout_marginTop="@dimen/_1ssp" android:id="@+id/tvans" android:textSize="@dimen/_9sdp" android:fontFamily="@font/graphikmedium" android:visibility="gone" android:layout_weight="1" android:layout_below="@+id/ll" android:text="Anser"/>
 
-</RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_1ssp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/graphikmedium"
+                    android:textColor="#000"
+                    android:textSize="@dimen/_10sdp" />
 
-</RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/ll"
+                    android:layout_below="@+id/tvTitle"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvTitle"
+                        android:layout_weight="1"
+                        android:maxLines="4"
+                        android:ellipsize="end"
+                        android:layout_marginLeft="@dimen/_6sdp"
+                        android:layout_marginTop="@dimen/_1ssp"
+                        android:fontFamily="@font/graphikmedium"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_below="@+id/tvTitle"
+
+                        android:src="@drawable/ic_downarrow"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerInside"
+                        android:gravity="end"
+                        android:text="Aligned right" />
+
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="wrap_content"
+                        android:layout_below="@+id/tvTitle"
+                        android:visibility="gone"
+                        android:src="@drawable/ic_baseline_arrow_drop_up_24"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerInside"
+                        android:gravity="end"
+                        android:text="Aligned right" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginRight="20dp"
+                    android:layout_below="@+id/ll"
+                    android:text="Anser"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_1ssp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/graphikmedium"
+
+                    android:textSize="@dimen/_9sdp" />
+
+
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
 
 </LinearLayout>

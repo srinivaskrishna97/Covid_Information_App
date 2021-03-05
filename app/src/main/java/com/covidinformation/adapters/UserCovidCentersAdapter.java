@@ -3,11 +3,13 @@ package com.covidinformation.adapters;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,11 +63,11 @@ public class UserCovidCentersAdapter extends BaseAdapter {
         tvLocation.setText("Location: "+getCovidCenters.get(position).getLocation());
 
         TextView tvAdddressone=(TextView)obj2.findViewById(R.id.tvAdddressone);
-        tvAdddressone.setText("Address_1: "+getCovidCenters.get(position).getAddress1());
+        tvAdddressone.setText(getCovidCenters.get(position).getAddress1());
 
 
         TextView tvAdddresstwo=(TextView)obj2.findViewById(R.id.tvAdddresstwo);
-        tvAdddresstwo.setText("Address_2: "+getCovidCenters.get(position).getAddress2());
+        tvAdddresstwo.setText(getCovidCenters.get(position).getAddress2());
 
         TextView tvPhone=(TextView)obj2.findViewById(R.id.tvPhone);
         tvPhone.setText("Phone No: "+getCovidCenters.get(position).getPhone());
@@ -75,6 +77,15 @@ public class UserCovidCentersAdapter extends BaseAdapter {
 
         TextView tvLang=(TextView)obj2.findViewById(R.id.tvLang);
         tvLang.setText("Langitude: "+getCovidCenters.get(position).getLg());
+
+        ImageView ccall=(ImageView)obj2.findViewById(R.id.call);
+        ccall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + getCovidCenters.get(position).getPhone().toString()));
+                context.startActivity(intent);
+            }
+        });
 
         return obj2;
     }

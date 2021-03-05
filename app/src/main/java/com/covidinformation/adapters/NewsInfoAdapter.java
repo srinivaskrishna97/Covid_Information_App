@@ -1,5 +1,6 @@
 package com.covidinformation.adapters;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.covidinformation.R;
 import com.covidinformation.activities.AddQuarantineGuidelinesActivity;
 import com.covidinformation.activities.DetailedNewsActivity;
+import com.covidinformation.activities.EditNewsActivity;
 import com.covidinformation.api.ApiService;
 import com.covidinformation.api.RetroClient;
 import com.covidinformation.models.GetAllNewsPojo;
@@ -71,6 +73,12 @@ public class NewsInfoAdapter extends BaseAdapter {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent=new Intent(context, EditNewsActivity.class);
+                intent.putExtra("nid",allNewsPojos.get(position).getNid());
+                intent.putExtra("title",allNewsPojos.get(position).getTitle());
+                intent.putExtra("desc",allNewsPojos.get(position).getDes());
+                context.startActivity(intent);
+                //((Activity)context).finish();
 
             }
         });
@@ -104,7 +112,8 @@ public class NewsInfoAdapter extends BaseAdapter {
                 }else {
                     Intent intent=new Intent(context, AddQuarantineGuidelinesActivity.class);
                     context.startActivity(intent);
-                    Toast.makeText(context," Center Deleted successfully",Toast.LENGTH_SHORT).show();
+                    ((Activity)context).finish();
+                    Toast.makeText(context,"Deleted successfully",Toast.LENGTH_SHORT).show();
                 }
             }
             @Override

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.covidinformation">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -15,7 +16,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.NewsInfoActivity"></activity>
+        <activity android:name=".activities.GetNotificationActivity"></activity>
+        <activity android:name=".activities.TestActivity" />
+        <activity android:name=".activities.DetailsVaccineActivity" />
+        <activity android:name=".activities.EditNewsActivity" />
+        <activity android:name=".activities.EditTravellActivity" />
+        <activity android:name=".activities.EditQuarantineActivity" />
+        <activity android:name=".activities.AddVaccineDetailsActivity" />
+        <activity android:name=".activities.GetVaccineDetailsActivity" />
+        <activity android:name=".activities.NewsActivity" />
+        <activity android:name=".activities.EditVaccineActivity" />
+        <activity android:name=".activities.EditCovidInfoActivity" />
+        <activity android:name=".activities.SelfAssementTen" />
+        <activity android:name=".activities.SelfAssementNine" />
+        <activity android:name=".activities.SelfAssementEight" />
+        <activity android:name=".activities.SelfAssementSeven" />
+        <activity android:name=".activities.SelfAssementSix" />
+        <activity android:name=".activities.SelfAssementFive" />
+        <activity android:name=".activities.SelfAssementFourActivity" />
+        <activity android:name=".activities.SelfAssementThreeActivity" />
+        <activity android:name=".activities.SelfAssementTwoActivity" />
+        <activity android:name=".activities.SelfAssementOneActivity" />
+        <activity android:name=".activities.VaccineInfoActivity" />
+        <activity android:name=".activities.NewsInfoActivity" />
         <activity android:name=".activities.CovidCentersInfoActivity" />
         <activity android:name=".activities.AddQuarantineGuidelinesActivity" />
         <activity android:name=".activities.AddTravellGuidelinesActivity" />
@@ -31,7 +54,6 @@
         <activity android:name=".activities.AddNewsActivity" />
         <activity android:name=".activities.AdminDashBoardActivity" />
         <activity android:name=".activities.DetailedNewsActivity" />
-        <activity android:name=".activities.VaccineDetailsActivity" />
         <activity android:name=".activities.QuarantineGuideLinesActivity" />
         <activity android:name=".activities.EditProfileActivity" />
         <activity android:name=".activities.LoginActivity" />

@@ -1,5 +1,5 @@
 package com.covidinformation;
 
 public class Utils {
-    public static String SHREF="MB";
+    public static String SHREF="MyPref";
 }

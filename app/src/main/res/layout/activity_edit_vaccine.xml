@@ -1,11 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/admin_side_inner_page"
+    android:orientation="vertical">
 
-    <LinearLayout android:orientation="vertical" android:background="@drawable/admin_side_inner_page" android:gravity="center" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText
+        android:id="@+id/etTitle"
+        style="@style/modifiedEditText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:hint="Title"
+        android:paddingBottom="10dp"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        android:textSize="@dimen/_14sdp" />
 
-    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:textSize="@dimen/_14sdp" android:textColorHint="#000" android:textColor="#000" android:paddingBottom="10dp" android:hint="Title" android:layout_marginRight="@dimen/_10sdp" android:layout_marginTop="@dimen/_15sdp" android:layout_marginLeft="@dimen/_10sdp" style="@style/modifiedEditText1" android:id="@+id/etTitle"/>
 
-    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:textSize="@dimen/_14sdp" android:textColorHint="#000" android:textColor="#000" android:paddingBottom="10dp" android:hint="Description" android:layout_marginRight="@dimen/_10sdp" android:layout_marginTop="@dimen/_15sdp" android:layout_marginLeft="@dimen/_10sdp" style="@style/modifiedEditText1" android:id="@+id/etDescription"/>
+    <EditText
+        android:id="@+id/etDescription"
+        style="@style/modifiedEditText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:hint="Description"
+        android:paddingBottom="10dp"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        android:textSize="@dimen/_14sdp" />
 
-    <Button android:background="#4A2A6F" android:gravity="center" android:layout_height="@dimen/_32ssp" android:layout_width="match_parent" android:textSize="@dimen/_12sdp" android:textColor="#FFFFFF" android:layout_marginRight="@dimen/_10sdp" android:layout_marginTop="@dimen/_15ssp" android:layout_marginLeft="@dimen/_10sdp" android:id="@+id/btnAdd" android:textAllCaps="false" android:text="Update" android:layout_alignParentRight="true" android:layout_below="@+id/etDescription"/>
+
+
+
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32ssp"
+        android:layout_marginTop="@dimen/_15ssp"
+        android:layout_below="@+id/etDescription"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="#4A2A6F"
+        android:gravity="center"
+        android:text="Update"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_12sdp" />
 
 </LinearLayout>

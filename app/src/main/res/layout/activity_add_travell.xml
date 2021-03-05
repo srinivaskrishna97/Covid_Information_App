@@ -4,14 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eceff1"
+    android:background="@drawable/admin_side_inner_page"
     tools:context=".activities.AddQuarantineGuidelinesActivity">
 
+    <LinearLayout
+        android:id="@+id/dg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/mybutton2"
+            android:text="Travel Guidelines"
+            android:textColor="#fff"
+            android:textSize="14dp"
+            android:layout_marginRight="100dp"
+            />
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_13sdp"
+        android:layout_marginTop="@dimen/_63sdp"
         android:orientation="horizontal">
 
         <Spinner
@@ -59,22 +76,23 @@
         android:textColorHint="#000" />
 
 
+
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="@dimen/_110sdp"
-        android:layout_height="@dimen/_38sdp"
+        android:layout_height="@dimen/_28sdp"
         android:layout_below="@+id/etDescription"
         android:layout_alignParentRight="true"
         android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginRight="@dimen/_10sdp"
-        android:background="@drawable/btn_design_2"
+        android:background="#4A2A6F"
         android:gravity="center"
         android:text="Add"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        android:textSize="@dimen/_15sdp"
-        android:textStyle="bold" />
+        android:textSize="@dimen/_12sdp"
+        />
 
     <ListView
         android:id="@+id/list_view"
