@@ -36,7 +36,7 @@ public class CovidCentersInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_covid_centers_info);
 
 
-        getSupportActionBar().setTitle("COVID CENTRES");
+        getSupportActionBar().setTitle("Covid Centers");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -54,7 +54,7 @@ public class CovidCentersInfoActivity extends AppCompatActivity {
     }
     public void getCovidCenters(){
         pd = new ProgressDialog(CovidCentersInfoActivity.this);
-        pd.setMessage("Loading.....");
+        pd.setMessage("Loading....");
         pd.show();
 
         ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
@@ -76,7 +76,7 @@ public class CovidCentersInfoActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<GetCovidCentersPojo>> call, Throwable t) {
                 pd.dismiss();
-                Toast.makeText(CovidCentersInfoActivity.this, "Something went wrong....Please try later!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CovidCentersInfoActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
     }
