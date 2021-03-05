@@ -12,7 +12,7 @@ import android.view.View;
 import com.covidinformation.R;
 
 public class AdminDashBoardActivity extends AppCompatActivity {
-    CardView cdAddNews,cdAddCovidCenters,cdCouuntryReports,cdTravellGuidence,cdNotifications,cdQuarantineGuideLines;
+    CardView cdAddNews,cdAddCovidCenters,cdCouuntryReports,cdTravellGuidence,cdNotifications,cdQuarantineGuideLines,cdvaccinedetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +72,16 @@ public class AdminDashBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminDashBoardActivity.this,NotificationsActivity.class));
+
+            }
+        });
+
+
+        cdvaccinedetails=(CardView)findViewById(R.id.cdvaccinedetails);
+        cdvaccinedetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminDashBoardActivity.this,VaccineInfoActivity.class));
 
             }
         });
