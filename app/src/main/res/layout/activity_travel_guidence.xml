@@ -60,7 +60,14 @@
 
 
 
-
+    <ListView
+        android:layout_below="@+id/btnSubmit"
+        android:layout_marginTop="@dimen/_5ssp"
+        android:id="@+id/list_view"
+        android:divider="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
 
 
 </RelativeLayout>
