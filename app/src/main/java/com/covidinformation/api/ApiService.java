@@ -4,9 +4,11 @@ import com.covidinformation.models.EditProfilePojo;
 import com.covidinformation.models.GetAllNewsPojo;
 import com.covidinformation.models.GetCovidCentersPojo;
 import com.covidinformation.models.GetQGPojo;
+import com.covidinformation.models.NotificationPojo;
 import com.covidinformation.models.QGuideLinesPojo;
 import com.covidinformation.models.ResponseData;
 import com.covidinformation.models.SafetyGuidencePojo;
+import com.covidinformation.models.VaccinePojo;
 
 import java.util.List;
 import java.util.Map;
@@ -31,6 +33,20 @@ public interface ApiService {
             @Query("age") String age,
             @Query("country") String country,
             @Query("province") String province);
+
+
+    @GET("/covid/addnotification.php")
+    Call<ResponseData> addnotification(
+            @Query("type") String type,
+            @Query("name") String name,
+            @Query("msg") String msg);
+
+    @Multipart
+    @POST("covid/user_registration.php")
+    Call<ResponseData> user_registration(
+            @Part MultipartBody.Part file,
+            @PartMap Map<String, String> partMap
+    );
 
     @GET("/covid/user_login.php?")
     Call<ResponseData> userLogin(
@@ -70,9 +86,21 @@ public interface ApiService {
     @GET("covid/getnews.php")
     Call<List<GetAllNewsPojo>> getAllNews();
 
+    @GET("covid/getvaccine.php")
+    Call<List<VaccinePojo>> getvaccine();
+
 
     @GET("covid/searchquarantine.php")
     Call<List<QGuideLinesPojo>> searchquarantine(@Query("province") String province);
+
+    @GET("covid/getquarantine.php")
+    Call<List<QGuideLinesPojo>> allsearchquarantine();
+
+    @GET("covid/gettravel.php")
+    Call<List<QGuideLinesPojo>> allsearchtravel();
+
+    @GET("/covid/getnotification.php")
+    Call<List<NotificationPojo>> getnotification();
 
 
     @GET("covid/searchtravel.php")
@@ -91,6 +119,51 @@ public interface ApiService {
 
 
 
+
+    @GET("/covid/editnews.php?")
+    Call<ResponseData> editnews(
+            @Query("title") String title,
+            @Query("des") String des,
+            @Query("nid") String nid
+    );
+
+
+
+
+    @GET("/covid/editvaccine.php?")
+    Call<ResponseData> editvaccine(
+            @Query("title") String title,
+            @Query("des") String des,
+            @Query("vid") String vid
+    );
+
+    @GET("/covid/edittravel.php?")
+    Call<ResponseData> edittravel(
+            @Query("province") String province,
+            @Query("country") String country,
+            @Query("description") String description,
+            @Query("tid") String tid
+    );
+
+
+    @GET("/covid/editquarantine.php?")
+    Call<ResponseData> editquarantine(
+            @Query("province") String province,
+            @Query("country") String country,
+            @Query("description") String description,
+            @Query("qid") String qid
+    );
+
+
+    @GET("/covid/addvaccine.php?")
+    Call<ResponseData> addvaccine(
+            @Query("title") String title,
+            @Query("des") String des,
+            @Query("dat") String dat
+    );
+
+
+
     @GET("/covid/addcenters.php?")
     Call<ResponseData> addcenters(
             @Query("name") String name,
@@ -100,6 +173,19 @@ public interface ApiService {
             @Query("phone") String phone,
             @Query("lat") String lat,
             @Query("lg") String lg
+    );
+
+
+
+
+    @GET("/covid/editcerters.php?")
+    Call<ResponseData> editcerters(
+            @Query("name") String name,
+            @Query("location") String location,
+            @Query("address1") String address1,
+            @Query("address2") String address2,
+            @Query("phone") String phone,
+            @Query("cid") String cid
     );
 
 
@@ -121,9 +207,11 @@ public interface ApiService {
     @GET("covid/safetyguidence.php")
     Call<List<SafetyGuidencePojo>> safetyguidence();
 
+
+
+
     @GET("/covid/deletecenter.php")
     Call<ResponseData> deletecenter(@Query("id") String id);
-
 
 
     @GET("/covid/deletequarantine.php")
@@ -132,6 +220,10 @@ public interface ApiService {
 
     @GET("/covid/deletenews.php")
     Call<ResponseData> deletenews(@Query("id") String id);
+
+
+    @GET("/covid/deletevaccine.php")
+    Call<ResponseData> deletevaccine(@Query("id") String id);
 
 
     @GET("/covid/deletetravel.php")

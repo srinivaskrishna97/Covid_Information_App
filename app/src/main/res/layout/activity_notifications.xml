@@ -1,18 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.CountryReportsActivity">
+    android:background="@drawable/admin_side_inner_page"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:textSize="@dimen/_23sdp"
-        android:layout_marginTop="@dimen/_25sdp"
-        android:text="Coming Soon"
-        android:gravity="center"
+
+
+
+    <Spinner
+        android:id="@+id/spinCategory"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_16ssp"
+        android:layout_marginTop="@dimen/_15ssp"
+        android:layout_marginRight="@dimen/_17ssp"
+        android:layout_marginBottom="@dimen/_10ssp"
+        android:background="@drawable/spinner_border_black"
+        android:entries="@array/category"
+        android:paddingBottom="10dp" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/parent">
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_margin="@dimen/_15sdp"
+            style="@style/modifiedEditText1"
+            android:hint="Name"
+            android:inputType="textEmailAddress"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/parent">
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_margin="@dimen/_15sdp"
+            style="@style/modifiedEditText1"
+            android:hint="Message"
+            android:inputType="textEmailAddress"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:text="Submit"
+        android:paddingRight="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:background="#4A2A6F" />
+
+
 
 </LinearLayout>

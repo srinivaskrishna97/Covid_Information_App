@@ -2,6 +2,7 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/admin_side_inner_page"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -13,7 +14,7 @@
         app:cardElevation="@dimen/_2sdp"
         app:cardCornerRadius="@dimen/_8sdp"
         android:layout_margin="10dp"
-        app:cardBackgroundColor="#fff"
+        app:cardBackgroundColor="#34FDFBFB"
         app:cardMaxElevation="@dimen/_6sdp">
 
         <RelativeLayout
@@ -60,7 +61,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:layout_marginRight="21dp"
-                android:background="@drawable/button_design"
+                android:background="#4A2A6F"
                 android:text="Back"
                 android:textAllCaps="false"
                 android:textColor="#ffffff" />

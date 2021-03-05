@@ -150,6 +150,22 @@
     </LinearLayout>
 
 
+    <Button
+        android:id="@+id/btnUploadImage"
+        android:layout_width="@dimen/_100ssp"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_marginLeft="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/button_design"
+        android:gravity="center"
+        android:text="Upload Pic"
+        android:visibility="gone"
+        android:textAllCaps="false"
+        android:textColor="#000"
+        android:textSize="@dimen/_11sdp" />
+
+
 
 
     <Button
@@ -163,7 +179,7 @@
         android:gravity="center"
         android:text="Register"
         android:textAllCaps="false"
-        android:textColor="#FFFFFF"
+        android:textColor="#000"
         android:textSize="@dimen/_15sdp"
         android:textStyle="bold" />
 

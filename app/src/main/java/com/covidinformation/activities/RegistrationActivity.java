@@ -36,9 +36,9 @@ RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_registration);
 
-        getSupportActionBar().setTitle("Registration"); //set title to the activity
-        getSupportActionBar().setHomeButtonEnabled(true); //set homebutton enable on a activity.
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //set up the UP arrow
+        getSupportActionBar().setTitle("Registration");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //take values from the layout files.
         etName=(EditText)findViewById(R.id.etName);

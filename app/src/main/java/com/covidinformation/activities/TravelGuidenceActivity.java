@@ -35,7 +35,6 @@ public class TravelGuidenceActivity extends AppCompatActivity {
     List<QGuideLinesPojo> guidencePojoList;
     Spinner spinProveience;
     Button btnSubmit;
-    Spinner spinFrom,spinTo;
     TravelGuidenceAdapter travelGuidenceAdapter;
 
     @Override
@@ -46,9 +45,9 @@ public class TravelGuidenceActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Travel Guidencs");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        spinProveience=(Spinner)findViewById(R.id.spinProveience);
+        spinProveience = (Spinner) findViewById(R.id.spinProveience);
 
-        btnSubmit=(Button)findViewById(R.id.btnSubmit);
+        btnSubmit = (Button) findViewById(R.id.btnSubmit);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,27 +55,61 @@ public class TravelGuidenceActivity extends AppCompatActivity {
             }
         });
 
-       /* spinFrom=(Spinner)findViewById(R.id.spinFrom);
-        spinTo=(Spinner)findViewById(R.id.spinTo);
-        spinTo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-            {
-                String text = spinFrom.getSelectedItem().toString().toLowerCase(Locale.getDefault());
-                travelGuidenceAdapter.guidenceFilter(text);
-            } // to close the onItemSelected
-            public void onNothingSelected(AdapterView<?> parent)
-            {
+
+
+        list_view = (ListView) findViewById(R.id.list_view);
+        guidencePojoList = new ArrayList<>();
+        AllGetTravelGuidence();
+
+        spinProveience = (Spinner) findViewById(R.id.spinProveience);
+        spinProveience.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position>0){
+                    String text = spinProveience.getSelectedItem().toString().toLowerCase(Locale.getDefault());
+                    travelGuidenceAdapter.guidenceFilter(text);
+                }
 
             }
-        });*/
-
-        list_view=(ListView)findViewById(R.id.list_view);
-        guidencePojoList=new ArrayList<>();
+            public void onNothingSelected(AdapterView<?> parent) {
+                AllGetTravelGuidence();
+            }
+        });
 
 
     }
+
     ProgressDialog progressDialog;
+    public void AllGetTravelGuidence() {
+        progressDialog = new ProgressDialog(TravelGuidenceActivity.this);
+        progressDialog.setMessage("Loading....");
+        progressDialog.show();
+        ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
+        Call<List<QGuideLinesPojo>> call = service.allsearchtravel();
+        call.enqueue(new Callback<List<QGuideLinesPojo>>() {
+            @Override
+            public void onResponse(Call<List<QGuideLinesPojo>> call, Response<List<QGuideLinesPojo>> response) {
+                progressDialog.dismiss();
+                if (response.body() == null) {
+                    Toast.makeText(TravelGuidenceActivity.this, "No data found", Toast.LENGTH_SHORT).show();
+                }
+                if (response.body().size() == 0) {
+                    Toast.makeText(TravelGuidenceActivity.this, "No data found", Toast.LENGTH_SHORT).show();
+                } else {
+                    guidencePojoList = response.body();
+                    travelGuidenceAdapter=new TravelGuidenceAdapter(TravelGuidenceActivity.this, guidencePojoList);
+                    list_view.setAdapter(travelGuidenceAdapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<QGuideLinesPojo>> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(TravelGuidenceActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
     public void GetTravelGuidence(String province) {
         progressDialog = new ProgressDialog(TravelGuidenceActivity.this);
         progressDialog.setMessage("Loading....");
@@ -92,7 +125,7 @@ public class TravelGuidenceActivity extends AppCompatActivity {
                 }
                 if (response.body().size() == 0) {
                     Toast.makeText(TravelGuidenceActivity.this, "No data found", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     guidencePojoList = response.body();
                     list_view.setAdapter(new TravelGuidelinesAdapter(TravelGuidenceActivity.this, guidencePojoList));
                 }
@@ -105,7 +138,6 @@ public class TravelGuidenceActivity extends AppCompatActivity {
             }
         });
     }
-
 
 
     @Override
