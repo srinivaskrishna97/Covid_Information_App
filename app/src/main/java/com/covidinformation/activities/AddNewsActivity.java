@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -56,6 +57,7 @@ public class AddNewsActivity extends AppCompatActivity implements EasyPermission
     Button btnUploadimg,btnSubmit;
     EditText etTitle,etDesc;
 ImageView iv;
+    @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
